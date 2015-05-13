@@ -95,14 +95,20 @@ class TemperatureController extends Controller {
       $page = strlen($request->input('page')) > 0 ? $request->input('page') : 1;
 
       $result = Temperature::where('user_id', '=', $userId) 
+
           ->where('mechine_id', '=', $mechineId)
+
           ->orderBy('create_at', 'desc')
+
           ->orderBy('id', 'desc')
+
           ->skip(2 * ($page - 1))
+
           ->take(3)
+
           ->get();
 
-      return $result->toJson();
+      return $this->successResponse('data', $result);
   
   }
 
@@ -111,10 +117,22 @@ class TemperatureController extends Controller {
    *
    * return JSON
    */
-  public function getLastest () 
+  public function getLastest (Request $request) 
   {
-  
-  
+    $userId = $request->input('uid');
+
+    $mechineId = $request->input('mid');
+
+    $maxId = Temperature::where('user_id', '=', $userId)
+
+        ->where('mechine_id', '=', $mechineId)
+
+        ->max('id');
+
+    $result = Temperature::where('id', '=', $maxId)->get();
+
+    return $this->successResponse('data', $result);
   
   }
+
 }

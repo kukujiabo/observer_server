@@ -96,12 +96,9 @@ class MechineController extends Controller {
 
           ->orderBy('id', 'asc')
 
-          ->get()
+          ->get();
 
-          ->toJson();
-
-
-      return $result;
+      return $this->successResponse('mechine_info', $result);
   
   }
 
@@ -115,9 +112,9 @@ class MechineController extends Controller {
   {
     $mid = $request->input('mid');
 
-    $result = Mechine::find($mid)->toJson();
+    $result = Mechine::find($mid);
   
-    return $result;
+    return $this->successResponse('mechine_info', $result);
   
   }
 }

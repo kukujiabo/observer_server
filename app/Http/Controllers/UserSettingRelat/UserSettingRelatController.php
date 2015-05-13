@@ -94,7 +94,7 @@ class UserSettingRelatController extends Controller {
         
         ->get();
 
-    return $result;
+    return $this->successResponse('data', $result);
   
   }
 
