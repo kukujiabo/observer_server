@@ -2,7 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Models\UserSetting;
+use App\Models\UserSettingRelat;
+use App\Models\UserConfigSetting;
 use Illuminate\Http\Request;
 
 class UserConfigSettingsController extends Controller {
@@ -65,10 +67,6 @@ class UserConfigSettingsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
-	{
-		//
-	}
 
 	/**
 	 * Remove the specified resource from storage.
@@ -81,9 +79,44 @@ class UserConfigSettingsController extends Controller {
 		//
 	}
 
-  /*
-   *
-   *
+  /**
+   * update user config setting.
+   * 
+   * @param Request
+   * @return Response
    */
+  public function update(Request $request)
+  {
+    $userId = $request->input('uid');
+
+    $settings = UserSetting::where('active', '=', '1')->get();
+
+    $fieldValue = array();
+
+    foreach ($settings as $setting) {
+
+      $val = '';
+    
+      if (strlen($val = $request->input($setting->setting_name))) {
+        
+          UserConfigSetting::where('user_id', '=', $userId)
+
+          ->where('setting_id', '=', $setting->id)
+
+          ->update(['setting_value' => $val]);
+      
+      }
+    
+    }
+
+    $response = UserSettingRelat::where('user_id', '=', $userId)
+
+        ->where('active', '=', '1')
+
+        ->get();
+
+    return $this->successResponse('data', $response);
+  
+  }
 
 }

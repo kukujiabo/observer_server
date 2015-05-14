@@ -9,7 +9,7 @@ class TemperatureTableSeeder extends Seeder {
   {
     DB::table('temperatures')->delete();  
 
-    for ($i = 0; $i < 10000; $i++) {
+    for ($i = 0; $i < 1000; $i++) {
     
       Temperature::create([
 
@@ -22,9 +22,8 @@ class TemperatureTableSeeder extends Seeder {
           'user_id' => $i/7,
 
           'mechine_id' => $i/10,
-
-          'create_at' => time() + 30 * $i
           
+          'created_at' => time() + 60 * $i
       ]);
     
     }

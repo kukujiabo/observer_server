@@ -23,4 +23,19 @@ abstract class Controller extends BaseController {
   
   }
 
+  /**
+   * return JsonObject
+   *
+   * @author meroc
+   * @params string $resKey, object $result
+   * @return response
+   */
+  protected function failResponse($msg) {
+  
+    $response = array ('code' => 0, 'msg' => $msg);
+
+    return json_encode($response);
+  
+  }
+
 }
