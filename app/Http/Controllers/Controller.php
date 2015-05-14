@@ -17,7 +17,7 @@ abstract class Controller extends BaseController {
    */
   protected function successResponse($resKey, $result) {
   
-    $response = array ('code' => 1, $resKey => $result);
+    $response = array ('code' => 1, 'msg' => '成功', $resKey => $result);
 
     return json_encode($response);
   
