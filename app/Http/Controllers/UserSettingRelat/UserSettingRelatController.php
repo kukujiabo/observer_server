@@ -90,11 +90,19 @@ class UserSettingRelatController extends Controller {
   {
     $userId = $request->input('uid');
 
-    $result = UserSettingRelat::where('user_id', '=', $userId)
+    $arr = UserSettingRelat::where('user_id', '=', $userId)
         
         ->get();
 
-    return $this->successResponse('data', $result);
+    $result = array();
+
+    foreach ($arr as $key => $value) {
+    
+      $result[$value['setting_name']] = $value;
+    
+    }
+
+    returg $this->successResponse('data', $result);
   
   }
 

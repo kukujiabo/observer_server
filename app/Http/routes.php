@@ -62,8 +62,18 @@ Route::group(['prefix' => 'userconfig', 'namespace' => 'UserSettingRelat', 'midd
   {
     Route::get('/', 'UserSettingRelatController@index');
 
-    Route::get('/getConfigByUser', 'UserSettingRelatController@getUserSettingByUser');
-  
+    Route::get('getConfigByUser', 'UserSettingRelatController@getUserSettingByUser');
+  }
+
+);
+
+Route::group(['prefix' => 'usersetting', 'namespace' => 'UserConfigSetting', 'middleware' => 'user'],
+
+  function () 
+  {
+    Route::get('/', 'UserConfigSetting@index');
+
+    Route::get('update', 'UserConfigSettingsController@update');
   }
 
 );
@@ -72,6 +82,3 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-
-
-
