@@ -41,7 +41,7 @@ class HumidityController extends Controller {
 
         ->skip(2 * ($page - 1))
 
-        ->take(3)
+        ->take(50)
 
         ->get();
 
