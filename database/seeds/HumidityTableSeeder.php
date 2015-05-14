@@ -19,9 +19,9 @@ class HumidityTableSeeder extends Seeder {
 
           'is_normal' => 1,
 
-          'user_id' => $i/7,
+          'user_id' => 1,
 
-          'mechine_id' => $i/10,
+          'mechine_id' => 1,
 
           'created_at' => time() + 60 * $i
           
