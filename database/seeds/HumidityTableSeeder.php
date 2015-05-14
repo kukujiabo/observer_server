@@ -23,7 +23,7 @@ class HumidityTableSeeder extends Seeder {
 
           'mechine_id' => $i/10,
 
-          'create_at' => time() - 30 * $i
+          'created_at' => time() + 60 * $i
           
       ]);
     
