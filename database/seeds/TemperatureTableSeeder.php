@@ -9,6 +9,8 @@ class TemperatureTableSeeder extends Seeder {
   {
     DB::table('temperatures')->delete();  
 
+    $user = DB('users')->first();
+
     for ($i = 0; $i < 1000; $i++) {
     
       Temperature::create([
