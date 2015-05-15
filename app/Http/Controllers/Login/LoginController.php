@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller {
@@ -18,7 +18,7 @@ class LoginController extends Controller {
 
     $password = $request->input('password');
 
-    $user = User::where('name', '=', $name)->get();
+    $user = User::where('name', '=', $name)->get()->toArray()[0];
 
     if ($user == null) {
     
@@ -26,7 +26,7 @@ class LoginController extends Controller {
     
     }
 
-    if ($password != $user->password) {
+    if ($password != $user['password']) {
     
       return $this->authFail(2);
     
