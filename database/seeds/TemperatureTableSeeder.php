@@ -9,6 +9,10 @@ class TemperatureTableSeeder extends Seeder {
   {
     DB::table('temperatures')->delete();  
 
+    $user = DB::table('users')->first();
+
+    $mechine = DB::table('mechines')->where('type', '=', '0')->first();
+
     for ($i = 0; $i < 1000; $i++) {
     
       Temperature::create([
@@ -19,9 +23,9 @@ class TemperatureTableSeeder extends Seeder {
 
           'is_normal' => 1,
 
-          'user_id' => 1,
+          'user_id' => $user->id,
 
-          'mechine_id' => 2,
+          'mechine_id' => $mechine->id,
           
           'created_at' => time() + 60 * $i
       ]);
