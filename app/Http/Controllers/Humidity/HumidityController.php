@@ -37,9 +37,7 @@ class HumidityController extends Controller {
 
         ->orderBy('create_at', 'desc')
 
-        ->orderBy('id', 'desc')
-
-        ->skip(2 * ($page - 1))
+        ->skip(50 * ($page - 1))
 
         ->take(50)
 
