@@ -14,9 +14,11 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-    $this->call('HumidityTableSeeder');
+    //$this->call('HumidityTableSeeder');
 
-    $this->call('TemperatureTableSeeder');
+    //$this->call('TemperatureTableSeeder');
+
+    $this->call('UserSeeder');
 
 		//$this->call('MechineTableSeeder');
 
