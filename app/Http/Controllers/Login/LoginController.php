@@ -26,7 +26,7 @@ class LoginController extends Controller {
     
     }
 
-    if ($password != $user['password']) {
+    if ($password != Crypt::decrypt($user['password'])) {
     
       return $this->authFail(2);
     

@@ -78,7 +78,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', 'peichongwulianobserverversion1.0'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
