@@ -14,11 +14,11 @@ class loginMiddleware {
 	public function handle($request, Closure $next)
 	{
 
-    if (!$request->isMethod('post')) {
+    //if (!$request->isMethod('post')) {
 
-      return json_encode(array('code' => 0, 'msg' => 'method fail.'));
+      //return json_encode(array('code' => 0, 'msg' => 'method fail.'));
     
-    }
+    //}
 
     if (empty($request->input('name'))) {
     
