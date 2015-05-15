@@ -15,7 +15,7 @@ class UserSeeder extends Seeder {
             
             'name' => 'testuser1',
 
-            'password' => bcrypt('123'),
+            'password' => md5(123),
 
             'email' => 'mymail@163.com'
             

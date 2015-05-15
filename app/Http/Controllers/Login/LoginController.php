@@ -26,17 +26,17 @@ class LoginController extends Controller {
     
     }
 
-    if ($password != Crypt::decrypt($user['password'])) {
-    
+    $uInfo = $user[0];
+
+    if ($uInfo['password'] != md5($password)) {
+
       return $this->authFail(2);
     
     }
 
-    $info = $user[0];
-
-    unset($info);
+    unset($uInfo['password']);
 		
-    return $this->successResponse('info', $info);
+    return $this->successResponse('info', $uInfo);
 
 	}
 
