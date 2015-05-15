@@ -9,12 +9,13 @@ class UserConfigSettingTableSeeder extends Seeder {
   {
     DB::table('user_config_settings')->delete();
 
+    $user = DB::table('users')->first();
     /*
      * 测试用户测量温度间隔配置
      */
     UserConfigSetting::create([
     
-        'user_id' => 1,
+        'user_id' => $user->id,
 
         'setting_id' => 10,
 
@@ -31,7 +32,7 @@ class UserConfigSettingTableSeeder extends Seeder {
      */
     UserConfigSetting::create([
     
-        'user_id' => 1,
+        'user_id' => $user->id,
 
         'setting_id' => 11,
 
@@ -48,7 +49,7 @@ class UserConfigSettingTableSeeder extends Seeder {
      */
     UserConfigSetting::create([
     
-        'user_id' => 1,
+        'user_id' => $user->id,
 
         'setting_id' => 12,
 
@@ -65,7 +66,7 @@ class UserConfigSettingTableSeeder extends Seeder {
      */
     UserConfigSetting::create([
     
-        'user_id' => 1,
+        'user_id' => $user->id,
 
         'setting_id' => 13,
 
@@ -82,7 +83,7 @@ class UserConfigSettingTableSeeder extends Seeder {
      */
     UserConfigSetting::create([
     
-        'user_id' => 1,
+        'user_id' => $user->id,
 
         'setting_id' => 14,
 
@@ -99,7 +100,7 @@ class UserConfigSettingTableSeeder extends Seeder {
      */
     UserConfigSetting::create([
     
-        'user_id' => 1,
+        'user_id' => $user->id,
 
         'setting_id' => 15,
 
@@ -116,7 +117,7 @@ class UserConfigSettingTableSeeder extends Seeder {
      */
     UserConfigSetting::create([
     
-        'user_id' => 1,
+        'user_id' => $user->id,
 
         'setting_id' => 16,
 
@@ -133,7 +134,7 @@ class UserConfigSettingTableSeeder extends Seeder {
      */
     UserConfigSetting::create([
     
-        'user_id' => 1,
+        'user_id' => $user->id,
 
         'setting_id' => 17,
 
