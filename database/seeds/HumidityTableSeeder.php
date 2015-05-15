@@ -9,6 +9,10 @@ class HumidityTableSeeder extends Seeder {
   {
     DB::table('humidities')->delete();  
 
+    $user = DB::table('users')->first();
+
+    $mechine = DB::table('mechines')->where('type', '=', '1')->first();
+
     for ($i = 0; $i < 10000; $i++) {
     
       Humidity::create([
@@ -19,9 +23,9 @@ class HumidityTableSeeder extends Seeder {
 
           'is_normal' => 1,
 
-          'user_id' => 1,
+          'user_id' => $user->id,
 
-          'mechine_id' => 1,
+          'mechine_id' => $mechine->id,
 
           'created_at' => time() + 60 * $i
           

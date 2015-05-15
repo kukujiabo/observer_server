@@ -9,13 +9,15 @@ class UserSeeder extends Seeder {
     public function run() 
     {
 
+        DB::table('users')->delete();
+
         User::create([
             
-            'name' => '123',
+            'name' => 'testuser1',
 
-            'password' => Crypt::encrypt('123'),
+            'password' => bcrypt('123'),
 
-            'email' => 'something@163.com'
+            'email' => 'mymail@163.com'
             
         ]);
     

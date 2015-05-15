@@ -8,6 +8,8 @@ class MechineTableSeeder extends Seeder {
   public function run () {
 
     DB::table('mechines')->delete();  
+
+    $user = DB::table('users')->first();
     
     for ($i = 0; $i < 20; $i++) {
     
@@ -15,9 +17,9 @@ class MechineTableSeeder extends Seeder {
     
           'address' => "$i, $i, $i, $i",
             
-          'type' => $i/3,
+          'type' => $i/2,
     
-          'uid' => $i/7,
+          'uid' => $user->id,
     
           'active' => 1,
           
@@ -26,6 +28,5 @@ class MechineTableSeeder extends Seeder {
     }
 
   }
-
 
 }
