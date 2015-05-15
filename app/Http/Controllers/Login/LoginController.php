@@ -1,20 +1,41 @@
-<?php namespace App\Http\Controllers\UserSettingRelat;
+<?php namespace App\Http\Controllers\Login;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\UserSettingRelat;
+use App\User;
 use Illuminate\Http\Request;
 
-class UserSettingRelatController extends Controller {
+class LoginController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		//
+    $name = $request->input('name');
+
+    $password = $request->input('password');
+
+    $user = User::where('name', '=', $name)->get()->toArray()[0];
+
+    if ($user == null) {
+    
+      return $this->authFail(1);
+    
+    }
+
+    if ($password != $user['password']) {
+    
+      return $this->authFail(2);
+    
+    }
+
+    unset($user['password']);
+		
+    return $this->successResponse('info', $user);
+
 	}
 
 	/**
@@ -80,30 +101,5 @@ class UserSettingRelatController extends Controller {
 	{
 		//
 	}
-
-  /**
-   * Get User's setting by id
-   *
-   * @return Response
-   */
-  public function getUserSettingByUser(Request $request)
-  {
-    $userId = $request->input('uid');
-
-    $arr = UserSettingRelat::where('user_id', '=', $userId)
-        
-        ->get();
-
-    $result = array();
-
-    foreach ($arr as $key => $value) {
-    
-      $result[$value['setting_name']] = $value;
-    
-    }
-
-    return jjj$this->successResponse('data', $result);
-  
-  }
 
 }

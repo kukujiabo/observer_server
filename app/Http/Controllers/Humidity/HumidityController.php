@@ -137,6 +137,4 @@ class HumidityController extends Controller {
 		//
 	}
 
-
-
 }

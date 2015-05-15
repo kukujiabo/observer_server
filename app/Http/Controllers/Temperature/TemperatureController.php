@@ -100,8 +100,6 @@ class TemperatureController extends Controller {
 
           ->orderBy('create_at', 'desc')
 
-          ->orderBy('id', 'desc')
-
           ->skip(50 * ($page - 1))
 
           ->take(50)
