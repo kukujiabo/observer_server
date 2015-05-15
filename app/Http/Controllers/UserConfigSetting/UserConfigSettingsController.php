@@ -109,13 +109,7 @@ class UserConfigSettingsController extends Controller {
     
     }
 
-    $response = UserSettingRelat::where('user_id', '=', $userId)
-
-        ->where('active', '=', '1')
-
-        ->get();
-
-    return $this->successResponse('data', $response);
+    return $this->successResponse();
   
   }
 

@@ -15,6 +15,7 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+
 Route::group(['prefix' => 'temperature', 'namespace' => 'Temperature', 'middleware' => 'user_mechine'],
 
   function ()
@@ -51,7 +52,6 @@ Route::group(['prefix' => 'mechine', 'namespace' => 'Mechine'],
       Route::get('getInfoByUser', ['middleware' => 'user', 'uses' =>  'MechineController@getInfoByUser']);
 
       Route::get('getInfoById', ['middleware' => 'user_mechine', 'uses' => 'MechineController@getInfoById']);
- 
   }
 
 );
@@ -78,7 +78,19 @@ Route::group(['prefix' => 'usersetting', 'namespace' => 'UserConfigSetting', 'mi
 
 );
 
+Route::group(['prefix' => 'login', 'namespace' => 'Login', 'middleware' => 'login'],
+
+  function ()
+  {
+    Route::get('/', 'LoginController@index');
+  }
+
+);
+
 Route::controllers([
+
 	'auth' => 'Auth\AuthController',
+
 	'password' => 'Auth\PasswordController',
+
 ]);
