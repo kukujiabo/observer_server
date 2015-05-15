@@ -18,9 +18,9 @@ class LoginController extends Controller {
 
     $password = $request->input('password');
 
-    $user = User::where('name', '=', $name)->get()->toArray()[0];
+    $user = User::where('name', '=', $name)->get()->toArray();
 
-    if ($user == null) {
+    if (empty($user)) {
     
       return $this->authFail(1);
     
@@ -32,9 +32,11 @@ class LoginController extends Controller {
     
     }
 
-    unset($user['password']);
+    $info = $user[0];
+
+    unset($info);
 		
-    return $this->successResponse('info', $user);
+    return $this->successResponse('info', $info);
 
 	}
 
