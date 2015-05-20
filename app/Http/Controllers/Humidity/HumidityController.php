@@ -29,19 +29,59 @@ class HumidityController extends Controller {
 
     $mechineId = $request->input('mid');
 
-    $page = strlen($request->input('mid')) ? $request->input('mid') : 1;
+    $hid = empty($request->input('hid')) ? null : $request->input('hid');
 
-    $result = Humidity::where('user_id', '=', $userId)
+    $comp = $hid ? empty($request->input('comp')) ? 1 : 0 : null;
+
+    $range = empty($request->input('range')) ? 50 : $request->input('range');
+
+    $result = null;
+
+    if (!empty($hid)) {
+
+      if ($comp == 1) {
+
+        $result = Humidity::where('user_id', '=', $userId) 
+
+          ->where('mechine_id', '=', $mechineId)
+
+          ->orderBy('id', 'asc')
+
+          ->where('id', '>', $hid)
+
+          ->take($range)
+
+          ->get();
+
+      } else {
+      
+        $result = Humidity::where('user_id', '=', $userId) 
+
+          ->where('mechine_id', '=', $mechineId)
+
+          ->orderBy('id', 'desc')
+
+          ->where('id', '<', $hid)
+
+          ->take($range)
+
+          ->get();
+      
+      }
+    
+    } else {
+
+      $result = Humidity::where('user_id', '=', $userId)
 
         ->where('mechine_id', '=', $mechineId)
 
-        ->orderBy('create_at', 'desc')
+        ->orderBy('id', 'desc')
 
-        ->skip(50 * ($page - 1))
-
-        ->take(50)
+        ->take($range)
 
         ->get();
+
+    }
 
     return $this->successResponse('data', $result);
   
