@@ -87,7 +87,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
         'setting_id' => 14,
 
-        'setting_value' => 20,
+        'setting_value' => 24,
 
         'active' => 1,
 
@@ -104,7 +104,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
         'setting_id' => 15,
 
-        'setting_value' => 10,
+        'setting_value' => 17,
 
         'active' => 1,
 
@@ -121,7 +121,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
         'setting_id' => 16,
 
-        'setting_value' => 90,
+        'setting_value' => 83,
 
         'active' => 1,
 
@@ -138,7 +138,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
         'setting_id' => 17,
 
-        'setting_value' => 70,
+        'setting_value' => 77,
 
         'active' => 1,
 
