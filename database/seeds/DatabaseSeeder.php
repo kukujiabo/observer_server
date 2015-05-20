@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder {
 
     $this->call('MechineTableSeeder');
 
+    $this->call('UserSettingTableSeeder');
+
     $this->call('UserConfigSettingTableSeeder');
 
     $this->call('HumidityTableSeeder');
