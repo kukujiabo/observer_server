@@ -13,11 +13,13 @@ class UserConfigSettingTableSeeder extends Seeder {
     /*
      * 测试用户测量温度间隔配置
      */
+    $setting = DB::table('user_settings')->where('setting_name', '=' , 't_interval')->first();
+
     UserConfigSetting::create([
     
         'user_id' => $user->id,
 
-        'setting_id' => 10,
+        'setting_id' => $setting->id,
 
         'setting_value' => 30,
 
@@ -30,11 +32,14 @@ class UserConfigSettingTableSeeder extends Seeder {
     /*
      * 测试用户测量湿度间隔配置
      */
+
+    $setting = DB::table('user_settings')->where('setting_name', '=' , 'h_interval')->first();
+
     UserConfigSetting::create([
     
         'user_id' => $user->id,
 
-        'setting_id' => 11,
+        'setting_id' => $setting->id,
 
         'setting_value' => 1800,
 
@@ -47,11 +52,14 @@ class UserConfigSettingTableSeeder extends Seeder {
     /*
      * 测试用户温度警告开关配置
      */
+
+    $setting = DB::table('user_settings')->where('setting_name', '=' , 't_warning')->first();
+
     UserConfigSetting::create([
     
         'user_id' => $user->id,
 
-        'setting_id' => 12,
+        'setting_id' => $setting->id,
 
         'setting_value' => 1,
 
@@ -64,11 +72,14 @@ class UserConfigSettingTableSeeder extends Seeder {
     /*
      * 测试用户湿度警告开关配置
      */
+
+    $setting = DB::table('user_settings')->where('setting_name', '=' , 'h_warning')->first();
+
     UserConfigSetting::create([
     
         'user_id' => $user->id,
 
-        'setting_id' => 13,
+        'setting_id' => $setting->id,
 
         'setting_value' => 1,
 
@@ -81,11 +92,14 @@ class UserConfigSettingTableSeeder extends Seeder {
     /*
      * 测试用户高温警告配置
      */
+
+    $setting = DB::table('user_settings')->where('setting_name', '=' , 't_warning_high')->first();
+
     UserConfigSetting::create([
     
         'user_id' => $user->id,
 
-        'setting_id' => 14,
+        'setting_id' => $setting->id,
 
         'setting_value' => 24,
 
@@ -98,11 +112,14 @@ class UserConfigSettingTableSeeder extends Seeder {
     /*
      * 测试用户低温警告配置
      */
+
+    $setting = DB::table('user_settings')->where('setting_name', '=' , 't_warning_low')->first();
+
     UserConfigSetting::create([
     
         'user_id' => $user->id,
 
-        'setting_id' => 15,
+        'setting_id' => $setting->id,
 
         'setting_value' => 17,
 
@@ -115,11 +132,14 @@ class UserConfigSettingTableSeeder extends Seeder {
     /*
      * 测试用户高湿度警告配置
      */
+
+    $setting = DB::table('user_settings')->where('setting_name', '=' , 'h_warning_high')->first();
+
     UserConfigSetting::create([
     
         'user_id' => $user->id,
 
-        'setting_id' => 16,
+        'setting_id' => $setting->id,
 
         'setting_value' => 83,
 
@@ -132,11 +152,14 @@ class UserConfigSettingTableSeeder extends Seeder {
     /*
      * 测试用户低湿度警告配置
      */
+
+    $setting = DB::table('user_settings')->where('setting_name', '=' , 'h_warning_low')->first();
+
     UserConfigSetting::create([
     
         'user_id' => $user->id,
 
-        'setting_id' => 17,
+        'setting_id' => $setting->id,
 
         'setting_value' => 77,
 
