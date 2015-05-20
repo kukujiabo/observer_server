@@ -11,7 +11,7 @@ class MechineTableSeeder extends Seeder {
 
     $user = DB::table('users')->first();
     
-    for ($i = 0; $i < 20; $i++) {
+    for ($i = 0; $i < 2; $i++) {
     
       Mechine::create([
     

@@ -92,19 +92,55 @@ class TemperatureController extends Controller {
 
       $mechineId = $request->input('mid');
 
-      $page = strlen($request->input('page')) > 0 ? $request->input('page') : 1;
+      $tid = empty($request->input('tid')) ? null : $request->input('tid');
 
-      $result = Temperature::where('user_id', '=', $userId) 
+      $comp = $tid ? empty($request->input('comp')) ? 1 : 0 : null;
+
+      $range = empty($request->input('range')) ? 50 : $request->input('range');
+
+      $result = null;
+
+      if (!empty($tid)) {
+
+        if ($comp == 1) {
+
+          $result = Temperature::where('user_id', '=', $userId) 
+
+            ->where('mechine_id', '=', $mechineId)
+
+            ->orderBy('id', 'desc')
+
+            ->whereBetween('id', [$tid, $tid + $range])
+
+            ->get();
+
+        } else {
+        
+          $result = Temperature::where('user_id', '=', $userId) 
+
+            ->where('mechine_id', '=', $mechineId)
+
+            ->orderBy('id', 'desc')
+
+            ->whereBetween('id', [$tid, $tid - $range])
+
+            ->get();
+        
+        }
+      
+      } else {
+
+        $result = Temperature::where('user_id', '=', $userId)
 
           ->where('mechine_id', '=', $mechineId)
 
-          ->orderBy('create_at', 'desc')
+          ->orderBy('id', 'desc')
 
-          ->skip(50 * ($page - 1))
-
-          ->take(50)
+          ->take($range)
 
           ->get();
+
+      }
 
       return $this->successResponse('data', $result);
   
