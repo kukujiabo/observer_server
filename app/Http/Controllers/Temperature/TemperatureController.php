@@ -108,9 +108,11 @@ class TemperatureController extends Controller {
 
             ->where('mechine_id', '=', $mechineId)
 
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
 
-            ->whereBetween('id', [$tid, $tid + $range])
+            ->where('id', '>', $tid)
+
+            ->take($range)
 
             ->get();
 
@@ -122,7 +124,9 @@ class TemperatureController extends Controller {
 
             ->orderBy('id', 'desc')
 
-            ->whereBetween('id', [$tid, $tid - $range])
+            ->where('id', '<', $tid)
+
+            ->take($range)
 
             ->get();
         
