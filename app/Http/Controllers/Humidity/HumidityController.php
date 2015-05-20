@@ -45,9 +45,11 @@ class HumidityController extends Controller {
 
           ->where('mechine_id', '=', $mechineId)
 
-          ->orderBy('id', 'desc')
+          ->orderBy('id', 'asc')
 
-          ->whereBetween('id', [$hid, $hid + $range])
+          ->where('id', '>', $hid)
+
+          ->take($range)
 
           ->get();
 
@@ -59,7 +61,9 @@ class HumidityController extends Controller {
 
           ->orderBy('id', 'desc')
 
-          ->whereBetween('id', [$hid, $hid - $range])
+          ->where('id', '<', $hid)
+
+          ->take($range)
 
           ->get();
       
