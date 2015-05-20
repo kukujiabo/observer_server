@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers\UserSettingRelat;
+<?php namespace App\Http\Controllers\Warning;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\UserSettingRelat;
+
 use Illuminate\Http\Request;
 
-class UserSettingRelatController extends Controller {
+class WariningsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -80,30 +80,5 @@ class UserSettingRelatController extends Controller {
 	{
 		//
 	}
-
-  /**
-   * Get User's setting by id
-   *
-   * @return Response
-   */
-  public function getUserSettingByUser(Request $request)
-  {
-    $userId = $request->input('uid');
-
-    $arr = UserSettingRelat::where('user_id', '=', $userId)
-        
-        ->get();
-
-    $result = array();
-
-    foreach ($arr as $key => $value) {
-    
-      $result[$value['setting_name']] = $value;
-    
-    }
-
-    return $this->successResponse('data', $result);
-  
-  }
 
 }
