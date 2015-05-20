@@ -17,7 +17,7 @@ class HumidityTableSeeder extends Seeder {
     
       Humidity::create([
 
-          'data' => 75 + $i/9,
+          'data' => 75 + $i%9,
             
           'type_id' => 2,
 
