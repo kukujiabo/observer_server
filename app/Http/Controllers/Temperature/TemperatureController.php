@@ -108,7 +108,7 @@ class TemperatureController extends Controller {
 
             ->where('mechine_id', '=', $mechineId)
 
-            ->orderBy('id', 'asc')
+            ->orderBy('id', 'desc')
 
             ->where('id', '>', $tid)
 
@@ -122,7 +122,7 @@ class TemperatureController extends Controller {
 
             ->where('mechine_id', '=', $mechineId)
 
-            ->orderBy('id', 'asc')
+            ->orderBy('id', 'desc')
 
             ->where('id', '<', $tid)
 
@@ -138,7 +138,7 @@ class TemperatureController extends Controller {
 
           ->where('mechine_id', '=', $mechineId)
 
-          ->orderBy('id', 'asc')
+          ->orderBy('id', 'desc')
 
           ->take($range)
 
@@ -146,7 +146,7 @@ class TemperatureController extends Controller {
 
       }
 
-      return $this->successResponse('data', $result);
+      return $this->successResponse('data', array_reverse($result->toArray()));
   
   }
 
