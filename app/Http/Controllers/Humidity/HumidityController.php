@@ -83,7 +83,7 @@ class HumidityController extends Controller {
 
     }
 
-    return $this->successResponse('data', array_reverse($result));
+    return $this->successResponse('data', array_reverse($result->toArray()));
   
   }
 
