@@ -45,7 +45,7 @@ class HumidityController extends Controller {
 
           ->where('mechine_id', '=', $mechineId)
 
-          ->orderBy('id', 'asc')
+          ->orderBy('id', 'desc')
 
           ->where('id', '>', $hid)
 
@@ -59,7 +59,7 @@ class HumidityController extends Controller {
 
           ->where('mechine_id', '=', $mechineId)
 
-          ->orderBy('id', 'asc')
+          ->orderBy('id', 'desc')
 
           ->where('id', '<', $hid)
 
@@ -75,7 +75,7 @@ class HumidityController extends Controller {
 
         ->where('mechine_id', '=', $mechineId)
 
-        ->orderBy('id', 'asc')
+        ->orderBy('id', 'desc')
 
         ->take($range)
 
