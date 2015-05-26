@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\AnalasysLog;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class UserExtInfoController extends Controller {
+class AnalasysLogsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
