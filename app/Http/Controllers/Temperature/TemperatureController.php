@@ -140,6 +140,8 @@ class TemperatureController extends Controller {
 
           ->orderBy('id', 'desc')
 
+          ->skip(1)
+
           ->take($range)
 
           ->get();
