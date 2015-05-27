@@ -2,10 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Models\Warning;
 use Illuminate\Http\Request;
 
-class WariningsController extends Controller {
+class WarningsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -80,5 +80,43 @@ class WariningsController extends Controller {
 	{
 		//
 	}
+
+  public function getWarnings (Request $request) {
+  
+    $start = empty($request->input('start')) ? 0 : $request->input('start');
+
+    $end = empty($request->input('start')) ? 10 : $request->input('end');
+
+    $uid = $request->input('uid');
+
+    $type = $request->input('type');
+
+    $mid = $request->input('mid');
+
+    $count = Warning::where('user_id', '=', $uid)
+          
+              ->where('type', '=', $type)
+
+              ->count();
+
+    if ($count > $start) {
+    
+      return  $this->successResponse('totalCount', $count);
+    
+    }
+
+    $results = Warning::where('user_id', '=', $uid)
+
+                ->orderBy('id', 'desc')
+
+                ->skip($start)
+
+                ->take($end - $start)
+
+                ->get();
+
+    return $this->successResponse('data', $results);
+
+  }
 
 }
