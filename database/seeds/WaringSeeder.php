@@ -139,7 +139,7 @@ class WarningSeeder extends Seeder {
 
               ->get();
 
-          foreach($h_temperatures as $temperature) {
+          foreach($l_temperatures as $temperature) {
 
             Warning::create([
                 

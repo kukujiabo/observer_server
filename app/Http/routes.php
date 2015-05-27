@@ -78,6 +78,17 @@ Route::group(['prefix' => 'usersetting', 'namespace' => 'UserConfigSetting', 'mi
 
 );
 
+Route::group(['prefix' => 'warning', 'namespace' => 'Warning', 'middleware' => 'user'],
+
+  function ()
+  {
+    Route::get('/', 'WarningsController@index');
+
+    Route::get('list', 'WarningsController@getWarnings');
+  }
+
+);
+
 Route::group(['prefix' => 'login', 'namespace' => 'Login', 'middleware' => 'login'],
 
   function ()
