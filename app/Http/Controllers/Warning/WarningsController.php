@@ -89,17 +89,11 @@ class WarningsController extends Controller {
 
     $uid = $request->input('uid');
 
-    $type = $request->input('type');
-
-    $mid = $request->input('mid');
-
     $count = Warning::where('user_id', '=', $uid)
           
-              ->where('type', '=', $type)
-
               ->count();
 
-    if ($count > $start) {
+    if ($start > $count) {
     
       return  $this->successResponse('totalCount', $count);
     
@@ -115,7 +109,7 @@ class WarningsController extends Controller {
 
                 ->get();
 
-    return $this->successResponse('data', $results);
+    return $this->successResponse(array('data', 'totalCount'), array($results, $count));
 
   }
 
