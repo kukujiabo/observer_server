@@ -19,7 +19,15 @@ abstract class Controller extends BaseController {
 
     $response = array ('code' => 1, 'msg' => 'ok');
 
-    if ($resKey) {
+    if (is_array($resKey)) {
+      
+      foreach ($resKey as $key => $val) {
+      
+        $response[$val] = $result[$key];
+      
+      }
+    
+    } else if (strlen($resKey)) {
 
       $response[$resKey] = $result;  
     
