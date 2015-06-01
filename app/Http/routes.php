@@ -89,6 +89,17 @@ Route::group(['prefix' => 'warning', 'namespace' => 'Warning', 'middleware' => '
 
 );
 
+Route::group(['prefix' => 'analasys', 'namespace' => 'AnalasysLog', 'middleware' => 'user'],
+
+  function () 
+  {
+    Route::get('/', 'AnalasysLogsController@index');
+
+    Route::get('getLogsByUserId', 'AnalasysLogsController@getByUserId');
+  }
+
+);
+
 Route::group(['prefix' => 'login', 'namespace' => 'Login', 'middleware' => 'login'],
 
   function ()

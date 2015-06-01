@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers\AnalasysLog;
+<?php namespace App\Http\Controllers\Infos;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\AnalasysLog;
+
 use Illuminate\Http\Request;
 
-class AnalasysLogsController extends Controller {
+class InfosController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -80,40 +80,5 @@ class AnalasysLogsController extends Controller {
 	{
 		//
 	}
-
-  /**
-   * Get Analasys logs. 
-   *
-   *
-   */
-  public function getByUserId (Request $request)
-  {
-    $uid = $request->input('uid');
-
-    $start = empty($request->input('start')) ? 0 : $request->input('start');
-
-    $end = empty($request->input('end')) ? 10 : $request->input('end');
-
-    $count = AnalasysLog::where('user_id', '=', $uid)->count();
-
-    if ($start > $count || $start < 0) {
-    
-      return $this->failResponse('请求的页数不存在');
-    
-    }
-
-    $results = AnalasysLog::where('user_id', '=', $uid)
-
-              ->orderBy('id', 'desc')
-
-              ->skip($start)
-
-              ->take($end - $start)
-  
-              ->get();
-
-    return $this->successResponse(array('totalCount', 'data'), array($count, $results));
-  
-  }
 
 }
