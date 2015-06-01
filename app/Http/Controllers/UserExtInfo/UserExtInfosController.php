@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers\Infos;
+<?php namespace App\Http\Controllers\UserExtInfo;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Models\UserExtInfo;
 use Illuminate\Http\Request;
 
-class InfosController extends Controller {
+class UserExtInfosController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -80,5 +80,22 @@ class InfosController extends Controller {
 	{
 		//
 	}
+
+  /*
+   *
+   *
+   *
+   *
+   */
+  public function getInfoByUserId (Request $request)
+  {
+    
+     $uid = $request->input('uid');
+  
+     $results = UserExtInfo::where('user_id', '=', $uid)->get();
+
+     return $this->successResponse('info', $results);
+  
+  }
 
 }

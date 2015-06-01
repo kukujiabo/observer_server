@@ -100,6 +100,28 @@ Route::group(['prefix' => 'analasys', 'namespace' => 'AnalasysLog', 'middleware'
 
 );
 
+Route::group(['prefix' => 'info', 'namespace' => 'Info'],
+
+  function ()
+  {
+    Route::get('/', 'InfosController@index');
+
+    Route::get('getInfo', 'InfosController@getInfo');
+  }
+
+);
+
+Route::group(['prefix' => 'userinfo', 'namespace' => 'UserExtInfo', 'middleware' => 'user'],
+  
+  function () 
+  {
+    Route::get('/', 'UserExtInfosController@index');
+  
+    Route::get('getInfoById', 'UserExtInfosController@getInfoByUserId');
+  }
+
+);
+
 Route::group(['prefix' => 'login', 'namespace' => 'Login', 'middleware' => 'login'],
 
   function ()
