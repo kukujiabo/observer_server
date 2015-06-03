@@ -5,7 +5,8 @@ use App\Models\Mechine;
 
 class MechineTableSeeder extends Seeder {
 
-  public function run () {
+  public function run () 
+  {
 
     DB::table('mechines')->delete();  
 

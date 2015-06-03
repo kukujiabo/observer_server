@@ -89,6 +89,50 @@ Route::group(['prefix' => 'warning', 'namespace' => 'Warning', 'middleware' => '
 
 );
 
+Route::group(['prefix' => 'analasys', 'namespace' => 'AnalasysLog', 'middleware' => 'user'],
+
+  function () 
+  {
+    Route::get('/', 'AnalasysLogsController@index');
+
+    Route::get('getLogsByUserId', 'AnalasysLogsController@getByUserId');
+  }
+
+);
+
+Route::group(['prefix' => 'info', 'namespace' => 'Info'],
+
+  function ()
+  {
+    Route::get('/', 'InfosController@index');
+
+    Route::get('getInfo', 'InfosController@getInfo');
+  }
+
+);
+
+Route::group(['prefix' => 'userinfo', 'namespace' => 'UserExtInfo', 'middleware' => 'user'],
+  
+  function () 
+  {
+    Route::get('/', 'UserExtInfosController@index');
+  
+    Route::get('getInfoById', 'UserExtInfosController@getInfoByUserId');
+  }
+
+);
+
+Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user'],
+
+  function ()
+  {
+    Route::get('/', 'UsersController@index');
+
+    Route::post('profileImageUpload', 'UsersController@imgUpload');
+  }
+
+);
+
 Route::group(['prefix' => 'login', 'namespace' => 'Login', 'middleware' => 'login'],
 
   function ()

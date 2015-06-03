@@ -3,6 +3,8 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Temperature;
+use App\Models\MechineConfig;
+use App\Modles\UserConfigSetting;
 use Illuminate\Http\Request;
 
 class TemperatureController extends Controller {
@@ -22,9 +24,41 @@ class TemperatureController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create(Request $request)
 	{
-		//
+    $uid = $request->input('uid');
+
+    $mid = $request->input('mid');
+
+    $key = $request->input('key');
+
+    $mechineConfig = MechineConfig::where('user_id', '=', $uid)
+
+        ->where('mechine_id', '=', $mid)
+
+        ->get();
+
+    if ($key != $mechineConfig->key) {
+    
+      return $this->failResponse('key auth failed.');
+    
+    }
+
+    $userConfig = UserConfigSetting::where('user_id', '=', $uid)->get();
+
+    $userS
+
+    Temperature::create([
+        
+        'user_id' => $uid,
+
+        'mechine_id' => $mid,
+
+        'data' => $request->input('data');
+        
+    ]);
+
+
 	}
 
 	/**
