@@ -122,6 +122,17 @@ Route::group(['prefix' => 'userinfo', 'namespace' => 'UserExtInfo', 'middleware'
 
 );
 
+Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user'],
+
+  function ()
+  {
+    Route::get('/', 'UsersController@index');
+
+    Route::post('profileImageUpload', 'UsersController@imgUpload');
+  }
+
+);
+
 Route::group(['prefix' => 'login', 'namespace' => 'Login', 'middleware' => 'login'],
 
   function ()

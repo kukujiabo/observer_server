@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Models\ServerConfig;
 
 abstract class Controller extends BaseController {
 
@@ -81,6 +82,34 @@ abstract class Controller extends BaseController {
 
     return json_encode($response);
     
+  }
+
+  /**
+   *
+   *
+   *
+   *
+   */
+  protected function loadServerConfig ($names) 
+  {
+    if (is_array($names)) {
+
+      $results = array();
+    
+      foreach ($names as $name) {
+
+        $results[$name] = ServerConfig::where('field', '=', $name)->get();
+         
+      }
+
+      return $results;
+    
+    } else if (is_string($names)) {
+    
+      return ServerConfig::where('field', '=', $names)->get();
+    
+    }
+  
   }
 
 }

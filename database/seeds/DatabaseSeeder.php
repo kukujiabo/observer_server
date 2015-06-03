@@ -30,7 +30,9 @@ class DatabaseSeeder extends Seeder {
 
     //$this->call('WarningSeeder');
     
-    $this->call('InfoTableSeeder');
+    //$this->call('InfoTableSeeder');
+    //
+    $this->call('ServerConfigTableSeeder');
 
 	}
 
