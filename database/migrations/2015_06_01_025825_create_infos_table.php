@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnalasysLogsTable extends Migration {
+class CreateInfosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,15 @@ class CreateAnalasysLogsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('analasys_logs', function(Blueprint $table)
+		Schema::create('infos', function(Blueprint $table)
 		{
 			$table->increments('id');
-      $table->integer('user_id');
+      $table->integer('type');
       $table->string('title');
       $table->text('content');
-      $table->integer('type');
-      $table->string('ext_1');
-      $table->integer('ext_2');
+      $table->integer('ext_id');
+      $table->string('ext_s');
+      $table->text('ext_t');
 			$table->timestamps();
 		});
 	}
@@ -32,7 +32,7 @@ class CreateAnalasysLogsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('analasys_logs');
+		Schema::drop('infos');
 	}
 
 }

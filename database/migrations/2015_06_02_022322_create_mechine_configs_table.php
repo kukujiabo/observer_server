@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnalasysLogsTable extends Migration {
+class CreateMechineConfigsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,15 @@ class CreateAnalasysLogsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('analasys_logs', function(Blueprint $table)
+		Schema::create('mechine_configs', function(Blueprint $table)
 		{
 			$table->increments('id');
+      $table->integer('mechine_id');
       $table->integer('user_id');
-      $table->string('title');
-      $table->text('content');
-      $table->integer('type');
-      $table->string('ext_1');
-      $table->integer('ext_2');
+      $table->string('key');
+      $table->integer('ip');
+      $table->integer('ext_1');
+      $table->string('ext_2');
 			$table->timestamps();
 		});
 	}
@@ -32,7 +32,7 @@ class CreateAnalasysLogsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('analasys_logs');
+		Schema::drop('mechine_configs');
 	}
 
 }
