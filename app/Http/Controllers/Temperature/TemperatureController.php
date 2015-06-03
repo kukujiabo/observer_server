@@ -54,7 +54,7 @@ class TemperatureController extends Controller {
 
         'mechine_id' => $mid,
 
-        'data' => $request->input('data');
+        'data' => $request->input('data')
         
     ]);
 
