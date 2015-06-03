@@ -46,17 +46,17 @@ class TemperatureController extends Controller {
 
     $userConfig = UserConfigSetting::where('user_id', '=', $uid)->get();
 
-    $userS
+    //$userS
 
-    Temperature::create([
+    //Temperature::create([
         
-        'user_id' => $uid,
+        //'user_id' => $uid,
 
-        'mechine_id' => $mid,
+        //'mechine_id' => $mid,
 
-        'data' => $request->input('data')
+        //'data' => $request->input('data')
         
-    ]);
+    //]);
 
 
 	}
