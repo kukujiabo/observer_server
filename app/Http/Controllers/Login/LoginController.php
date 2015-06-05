@@ -37,13 +37,15 @@ class LoginController extends Controller {
 
     unset($uInfo['password']);
 
-    $userExt = UserExtInfo::where('user_id', '=', $uInfo->id)->get();
+    $userExt = UserExtInfo::where('user_id', '=', $uInfo['id'])->get();
 
     if (!empty($userExt)) {
 
-      $uInfo['pic_url'] = $userExt->pic_url;
+      $ext = $userExt[0];
+
+      $uInfo['pic_url'] = $ext->pic_url;
     
-      $uInfo['phone'] = $userExt->phone;
+      $uInfo['phone'] = $ext->phone;
     
     }
 		
