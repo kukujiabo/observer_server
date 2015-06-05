@@ -1,54 +1,20 @@
-<?php namespace App\Http\Controllers\Login;
+<?php namespace App\Http\Controllers\DataReciever;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Models\UserExtInfo;
+
 use Illuminate\Http\Request;
 
-class LoginController extends Controller {
+class DataRecieversController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index(Request $request)
+	public function index()
 	{
-    $name = $request->input('name');
-
-    $password = $request->input('password');
-
-    $user = User::where('name', '=', $name)->get()->toArray();
-
-    if (empty($user)) {
-    
-      return $this->authFail(1);
-    
-    }
-
-    $uInfo = $user[0];
-
-    if ($uInfo['password'] != md5($password)) {
-
-      return $this->authFail(2);
-    
-    }
-
-    unset($uInfo['password']);
-
-    $userExt = UserExtInfo::where('user_id', '=', $uInfo->id)->get();
-
-    if (!empty($userExt)) {
-
-      $uInfo['pic_url'] = $userExt->pic_url;
-    
-      $uInfo['phone'] = $userExt->phone;
-    
-    }
-		
-    return $this->successResponse('info', $uInfo);
-
+		//
 	}
 
 	/**
@@ -114,5 +80,17 @@ class LoginController extends Controller {
 	{
 		//
 	}
+
+  public function recieve (Request $request) 
+  {
+  
+    $mid = $request->input('mid');
+
+    $temperature = $request->input('temperature');
+
+    $humidity = $request->input('humidity');
+  
+  }
+
 
 }
