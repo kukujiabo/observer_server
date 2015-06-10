@@ -55,9 +55,25 @@ class UsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Request $request)
 	{
-		//
+	  $uname = $request->input('uname');
+
+    $uid = $request->input('uid');
+
+    if (empty($uname)) {
+
+      return $this->failResponse('uname is required.');
+    
+    }
+
+    $user = User::find($uid);
+
+    $user->name = $uname;
+
+    $user->save();
+
+    return $this->successResponse();
 	}
 
 	/**
