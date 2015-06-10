@@ -137,7 +137,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user']
 
     Route::post('profileImageUpload', 'UsersController@imgUpload');
 
-    Route::post('edit', 'UsersController@edit');
+    Route::get('edit', 'UsersController@edit');
 
   }
 
