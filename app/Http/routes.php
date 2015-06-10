@@ -72,7 +72,7 @@ Route::group(['prefix' => 'usersetting', 'namespace' => 'UserConfigSetting', 'mi
 
   function () 
   {
-    Route::get('/', 'UserConfigSetting@index');
+    Route::get('/', 'UserConfigSettingsController@index');
 
     Route::get('update', 'UserConfigSettingsController@update');
   }
@@ -130,6 +130,17 @@ Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user']
     Route::get('/', 'UsersController@index');
 
     Route::post('profileImageUpload', 'UsersController@imgUpload');
+  }
+
+);
+
+Route::group(['prefix' => 'wine', 'namespace' => 'Winw', 'middleware' => ''], 
+
+  function ()
+  {
+    Route::get('/', 'WineController@index');
+  
+    Route::get('wineByCode', 'WineController@getInfoByCode');
   }
 
 );
