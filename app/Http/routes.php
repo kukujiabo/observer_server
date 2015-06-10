@@ -123,18 +123,28 @@ Route::group(['prefix' => 'userinfo', 'namespace' => 'UserExtInfo', 'middleware'
 
 );
 
+/**
+ * 用户相关路由
+ *
+ *
+ */
 Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user'],
 
   function ()
   {
+
     Route::get('/', 'UsersController@index');
 
     Route::post('profileImageUpload', 'UsersController@imgUpload');
+
+    Route::post('edit', 'UsersController@edit');
+
   }
 
 );
 
-Route::group(['prefix' => 'wine', 'namespace' => 'Winw', 'middleware' => ''], 
+
+Route::group(['prefix' => 'wine', 'namespace' => 'Wine', 'middleware' => ''], 
 
   function ()
   {

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWinesTable extends Migration {
+class CreateGoodAttributesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,14 @@ class CreateWinesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('wines', function(Blueprint $table)
+		Schema::create('good_attributes', function(Blueprint $table)
 		{
 			$table->increments('id');
-      $table->string('wine_name');
-      $table->string('code');
-      $table->text('info');
+      $table->integer('g_id');
+      $table->integer('a_id');
+      $table->string('value');
+      $table->string('st');
+      $table->integer('active');
 			$table->timestamps();
 		});
 	}
@@ -29,7 +31,7 @@ class CreateWinesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('wines');
+		Schema::drop('good_attributes');
 	}
 
 }
