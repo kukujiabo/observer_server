@@ -102,16 +102,24 @@ class WineController extends Controller {
 
       'name' => '拉非红酒',
     
-      'pic_url' => '',
+      'pic_url' => '/public/',
+
+      'area' => '法国',
+
+      'brand' => '拉菲',
+
+      'grape' => '赤霞珠',
 
       'temp' => '24',
 
       'humi' => '80',
 
-      'intro' => '测试简介内容',
+      'cur_temp' => '25',
 
-      'assess' => '测试评估内容'
-    
+      'cur_humi' => '78',
+
+      'notice' => '温馨提示'
+
     );
 
     return $this->successResponse('info', $test);
