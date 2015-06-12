@@ -144,7 +144,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user']
 );
 
 
-Route::group(['prefix' => 'wine', 'namespace' => 'Wine', 'middleware' => ''], 
+Route::group(['prefix' => 'wine', 'namespace' => 'Wine', 'middleware' => 'user'], 
 
   function ()
   {
