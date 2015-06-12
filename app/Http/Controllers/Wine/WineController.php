@@ -89,8 +89,27 @@ class WineController extends Controller {
   public function getInfoByCode (Request $request) 
   {
     $code = $request->input('code');
+
+    $uid = $request->input('uid');
   
   
+    $test = array(
+
+      'name' => '拉非红酒',
+    
+      'pic_url' => '',
+
+      'temp' => '24',
+
+      'humi' => '80',
+
+      'intro' => '测试简介内容',
+
+      'assess' => '测试评估内容'
+    
+    );
   }
+
+  return $this->successResponse('info', $test);
 
 }
