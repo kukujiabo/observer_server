@@ -102,7 +102,7 @@ class WineController extends Controller {
 
       'name' => '拉非红酒',
     
-      'pic_url' => '/public/',
+      'pic_url' => '/imgs/wine.png',
 
       'area' => '法国',
 
