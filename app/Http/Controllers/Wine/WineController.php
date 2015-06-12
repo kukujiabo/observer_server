@@ -92,6 +92,11 @@ class WineController extends Controller {
 
     $uid = $request->input('uid');
   
+    if (empty($code)) {
+    
+      return $this->failResponse('code invalide.');
+    
+    }
   
     $test = array(
 
