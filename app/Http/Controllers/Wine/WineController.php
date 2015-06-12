@@ -110,6 +110,8 @@ class WineController extends Controller {
 
       'grape' => '赤霞珠',
 
+      'spec' => '干红',
+
       'temp' => '24',
 
       'humi' => '80',
