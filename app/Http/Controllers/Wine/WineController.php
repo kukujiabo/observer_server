@@ -108,8 +108,10 @@ class WineController extends Controller {
       'assess' => '测试评估内容'
     
     );
+
+    return $this->successResponse('info', $test);
+
   }
 
-  return $this->successResponse('info', $test);
 
 }
