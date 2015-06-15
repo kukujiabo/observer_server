@@ -136,7 +136,7 @@ class UsersController extends Controller {
     //Create dir if it not exists.
     if (!is_dir($userDir)) {
     
-      mkdir($userDir);
+      mkdir($userDir, true);
     
     }
 
