@@ -171,3 +171,4 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 
 ]);
+
