@@ -99,7 +99,7 @@ class UsersController extends Controller {
 	}
 
   /**
-   *
+   * 上传头像
    *
    *
    *
