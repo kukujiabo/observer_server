@@ -116,7 +116,7 @@ class UsersController extends Controller {
     $photo = $request->input('photo');
 
     //Get file upload dir.
-    $rootDir = $this->loadServerConfig('img_upload_dir');
+    $rootDir = $this->loadServerConfig('img_upload_dir')[0];
 
     //File name validate.
     if (empty($filename)) {
