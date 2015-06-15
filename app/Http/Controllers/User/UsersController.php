@@ -130,7 +130,7 @@ class UsersController extends Controller {
     }
 
     //User's image dir.
-    $userDir = $rootDir + md5($uid);
+    $userDir = $rootDir . md5($uid);
 
     //Create dir if it not exists.
     if (!is_dir($userDir)) {
