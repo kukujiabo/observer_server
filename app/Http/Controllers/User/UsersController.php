@@ -106,29 +106,50 @@ class UsersController extends Controller {
    */
   public function imgUpload (Request $request) 
   {
+    //Get userid.
     $uid = $request->input('uid');
 
+    //Get file name.
     $filename = $request->input('filename');
 
+    //Get photo.
+    $photo = $request->input('photo');
+
+    //Get file upload dir.
     $rootDir = $this->loadServerConfig('img_upload_dir');
 
+    //File name validate.
     if (empty($filename)) {
 
       return $this->failResponse('filename must be provided.');
     
+    } else if (empty($photo)) {
+    
+      return $this->failResponse('photo must be provided.');
+    
     }
 
-    $userDir = $dir + md5($uid);
+    //User's image dir.
+    $userDir = $rootDir + md5($uid);
 
+    //Create dir if it not exists.
     if (!is_dir($userDir)) {
     
       mkdir($userDir);
     
     }
 
-    if (Request::hasFile($filename) && Request::file($filename)->isValid()) {
+    $userPhoto = $userDir + $filename;
+
+    //将二进制字节流解码
+    $pContent = base64_decode($photo);
+
+    //创建文件
+    $res = file_put_contents($userPhoto, $pContent, true);
+
+    if ($res <= 0) {
     
-      Request::file($filename)->move($userDir, $filename);
+      return $this->failResponse('photo upload failed.');
     
     }
 
