@@ -169,7 +169,7 @@ class UsersController extends Controller {
 
     $info = UserExtInfo::find($userInfo['id']);
 
-    $info->pic_url = $relativeDir . $filename;
+    $info->pic_url = $relativeDir . '/' . $filename;
 
     $info->save();
 
