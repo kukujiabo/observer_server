@@ -151,17 +151,13 @@ class UsersController extends Controller {
     }
 
     //Absolute path for photo.
-    $userPhoto = $photoDir + $filename;
+    $userPhoto = $photoDir . '/' . $filename;
 
     //Decode.
     $pContent = base64_decode($photo);
 
     //Create photo.
     $res = file_put_contents($userPhoto, $pContent, true);
-
-    echo $userPhoto . '<br />';
-
-    echo $pContent . '<br />';
 
     if ($res <= 0) {
     
@@ -177,7 +173,7 @@ class UsersController extends Controller {
 
     $info->save();
 
-    return $this->successResponse();
+    return $this->successResponse('user', $userPhoto);
   
   }
 
