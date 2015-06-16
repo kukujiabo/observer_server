@@ -140,7 +140,7 @@ class UsersController extends Controller {
     
       try {
 
-        mkdir($photoDir, true);
+        mkdir($photoDir, 0777);
 
       } catch (Exception $e) {
       
