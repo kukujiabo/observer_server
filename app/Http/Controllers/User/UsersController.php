@@ -129,34 +129,48 @@ class UsersController extends Controller {
     
     }
 
-    //User's image dir.
-    $userDir = storage_path() . $rootDir->value . md5($uid);
+    $relativeDir = $rootDir->value . md5($uid);
 
-    echo $userDir . '<br />';
-    //Create dir if it not exists.
-    if (!is_dir($userDir)) {
+    //User's image dir.
+    $photoDir = public_path() . $relativeDir;
+
+    echo $photoDir. '<br />';
+
+    //Create folder if it doesn't exists.
+    if (!is_dir($photoDir)) {
     
-      mkdir($userDir, true);
+      try {
+
+        mkdir($photoDir, true);
+
+      } catch (Exception $e) {
+      
+        return $this->failResponse('upload failed.');
+      
+      }
     
     }
 
-    $userPhoto = $userDir + $filename;
+    //Absolute path for photo.
+    $userPhoto = $photoDir + $filename;
 
-    //将二进制字节流解码
+    //Decode.
     $pContent = base64_decode($photo);
 
-    //创建文件
+    //Create photo.
     $res = file_put_contents($userPhoto, $pContent, true);
 
     if ($res <= 0) {
     
-      return $this->failResponse('photo upload failed.');
+      return $this->failResponse('photo create failed.');
     
     }
 
-    $userInfo = UserExtInfo::find($uid);
+    $userInfo = UserExtInfo::where('user_id', '=', $uid)->get()[0];
 
-    $userInfo->pic_url = $userDir;
+    $info = UserExtInfo::find($userInfo['id']);
+
+    $info->pic_url = $relativeDir . $filename;
 
     $userInfo->save();
 
