@@ -165,7 +165,7 @@ class UsersController extends Controller {
 
       'content' => $pContent,
 
-      'path' => $$userPhoto
+      'path' => $userPhoto
     
     );
 
