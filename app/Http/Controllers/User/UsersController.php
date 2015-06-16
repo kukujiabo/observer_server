@@ -169,8 +169,6 @@ class UsersController extends Controller {
     
     );
 
-    var_dump($r);
-
     if ($res <= 0) {
     
       return $this->failResponse('photo create failed.');
@@ -185,7 +183,7 @@ class UsersController extends Controller {
 
     $info->save();
 
-    return $this->successResponse();
+    return $this->successResponse('s', $r);
   
   }
 
