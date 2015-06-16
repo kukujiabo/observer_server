@@ -159,15 +159,9 @@ class UsersController extends Controller {
     //Create photo.
     $res = file_put_contents($userPhoto, $pContent, true);
 
-    $r = array (
-      
-      'res' => $res,
+    echo $userPhoto . '<br />';
 
-      'content' => $pContent,
-
-      'path' => $userPhoto
-    
-    );
+    echo $pContent . '<br />';
 
     if ($res <= 0) {
     
@@ -183,7 +177,7 @@ class UsersController extends Controller {
 
     $info->save();
 
-    return $this->successResponse('s', $r);
+    return $this->successResponse();
   
   }
 
