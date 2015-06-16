@@ -159,6 +159,18 @@ class UsersController extends Controller {
     //Create photo.
     $res = file_put_contents($userPhoto, $pContent, true);
 
+    $r = array (
+      
+      'res' => $res,
+
+      'content' => $pContent,
+
+      'path' => $$userPhoto
+    
+    );
+
+    var_dump($r);
+
     if ($res <= 0) {
     
       return $this->failResponse('photo create failed.');
