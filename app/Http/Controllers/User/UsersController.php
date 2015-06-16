@@ -173,7 +173,7 @@ class UsersController extends Controller {
 
     $info->save();
 
-    return $this->successResponse('user', $userPhoto);
+    return $this->successResponse('pic_url', $info->pic_url);
   
   }
 
