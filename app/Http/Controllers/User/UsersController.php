@@ -129,12 +129,11 @@ class UsersController extends Controller {
     
     }
 
+    //Relative directory.
     $relativeDir = $rootDir->value . md5($uid);
 
     //User's image dir.
     $photoDir = public_path() . $relativeDir;
-
-    echo $photoDir. '<br />';
 
     //Create folder if it doesn't exists.
     if (!is_dir($photoDir)) {
@@ -172,7 +171,7 @@ class UsersController extends Controller {
 
     $info->pic_url = $relativeDir . $filename;
 
-    $userInfo->save();
+    $info->save();
 
     return $this->successResponse();
   
