@@ -112,6 +112,17 @@ Route::group(['prefix' => 'info', 'namespace' => 'Info'],
 
 );
 
+Route::group(['prefix' => 'goods', 'namespace' => 'Goods', 'middleware' => 'user'],
+
+  function () 
+  {
+    Route::get('/', 'GoodsController@index');
+  
+    Route::get('info', 'GoodsController@getGoodInfo'); 
+  }
+
+);
+
 Route::group(['prefix' => 'userinfo', 'namespace' => 'UserExtInfo', 'middleware' => 'user'],
   
   function () 

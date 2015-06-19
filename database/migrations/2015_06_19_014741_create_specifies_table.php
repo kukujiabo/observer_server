@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAttributesTable extends Migration {
+class CreateSpecifiesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,13 @@ class CreateAttributesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('attributes', function(Blueprint $table)
+		Schema::create('specifies', function(Blueprint $table)
 		{
 			$table->increments('id');
-      $table->string('aname');
-      $table->string('active');
+      $table->string('name');
+      $table->integer('parent_id');
+      $table->string('comment');
+      $table->string('ext_1');
 			$table->timestamps();
 		});
 	}
@@ -28,7 +30,7 @@ class CreateAttributesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('attributes');
+		Schema::drop('specifies');
 	}
 
 }
