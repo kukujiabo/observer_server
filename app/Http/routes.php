@@ -123,6 +123,17 @@ Route::group(['prefix' => 'goods', 'namespace' => 'Goods', 'middleware' => 'user
 
 );
 
+Route::group(['prefix' => 'buckets', 'namespace' => 'Bucket', 'middleware' => 'user'], 
+
+  function ()
+  {
+    Route::get('/', 'BucketController@index');
+  
+    Route::get('myBucket', 'BucketController@getBucket');
+  }
+
+);
+
 Route::group(['prefix' => 'userinfo', 'namespace' => 'UserExtInfo', 'middleware' => 'user'],
   
   function () 

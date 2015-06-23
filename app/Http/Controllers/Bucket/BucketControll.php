@@ -81,4 +81,13 @@ class BucketControll extends Controller {
 		//
 	}
 
+  public function getBucket (Request $request) {
+  
+    $uid = $request->input('uid');
+
+    
+  
+  
+  }
+
 }
