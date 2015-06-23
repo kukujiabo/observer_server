@@ -2,10 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Models\Bucket;
 use Illuminate\Http\Request;
 
-class BucketControll extends Controller {
+class BucketController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -81,12 +81,18 @@ class BucketControll extends Controller {
 		//
 	}
 
+  /*
+   * Get favorite goods by uid.
+   *
+   *
+   */
   public function getBucket (Request $request) {
   
     $uid = $request->input('uid');
-
-    
   
+    $myBucket = Bucket::where('user_id', '=', $uid)->first();
+  
+    return $this->successResponse('data', $myBucket);
   
   }
 
