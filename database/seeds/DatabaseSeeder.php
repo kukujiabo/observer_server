@@ -40,7 +40,9 @@ class DatabaseSeeder extends Seeder {
 
     //$this->call('GoodAttributeTableSeeder');
 
-    $this->call('GoodExtraInfosTableSeeder');
+    //$this->call('GoodExtraInfosTableSeeder');
+    //
+    $this->call('BucketTableSeeder');
 
 	}
 
