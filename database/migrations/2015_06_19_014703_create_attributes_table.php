@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGoodAttributesTable extends Migration {
+class CreateAttributesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,14 @@ class CreateGoodAttributesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('good_attributes', function(Blueprint $table)
+		Schema::create('attributes', function(Blueprint $table)
 		{
 			$table->increments('id');
-      $table->integer('g_id');
-      $table->integer('a_id');
-      $table->string('value');
-      $table->string('st');
+      $table->string('aname');
       $table->integer('active');
+      $table->string('intro');
+      $table->string('ext_1');
+      $table->string('acode');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +31,7 @@ class CreateGoodAttributesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('good_attributes');
+		Schema::drop('attributes');
 	}
 
 }

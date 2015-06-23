@@ -32,7 +32,15 @@ class DatabaseSeeder extends Seeder {
     
     //$this->call('InfoTableSeeder');
     //
-    $this->call('ServerConfigTableSeeder');
+    //$this->call('ServerConfigTableSeeder');
+    //
+    //$this->call('AttributesTableSeeder');
+
+    //$this->call('GoodTableSeeder');
+
+    //$this->call('GoodAttributeTableSeeder');
+
+    $this->call('GoodExtraInfosTableSeeder');
 
 	}
 
