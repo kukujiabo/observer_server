@@ -13,11 +13,13 @@ class HumidityTableSeeder extends Seeder {
 
     $mechine = DB::table('mechines')->where('type', '=', '1')->first();
 
-    for ($i = 0; $i < 10000; $i++) {
+    for ($i = 0; $i < 1000; $i++) {
     
       Humidity::create([
 
           'data' => 75 + $i%9,
+
+          'seq' => md5($i),
             
           'type_id' => 2,
 
