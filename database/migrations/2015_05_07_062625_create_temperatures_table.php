@@ -15,6 +15,7 @@ class CreateTemperaturesTable extends Migration {
 		Schema::create('temperatures', function(Blueprint $table)
 		{
 			$table->increments('id');
+      $table->string('seq');
       $table->float('data');
       $table->integer('type_id');
       $table->integer('is_normal');

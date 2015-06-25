@@ -18,6 +18,8 @@ class TemperatureTableSeeder extends Seeder {
       Temperature::create([
 
           'data' => 15 + $i%13,
+
+          'seq' => md5($i),
             
           'type_id' => 2,
 
