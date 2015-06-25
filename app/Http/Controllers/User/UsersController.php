@@ -177,4 +177,26 @@ class UsersController extends Controller {
   
   }
 
+  public function updateChannel (Request $request) {
+  
+    $uid = $request->input('uid');
+
+    $cid = $request->cid('cid');
+
+    $userInfo = UserExtInfo::where('user_id', '=', $uid)->first();
+
+    if (empty($user)) {
+    
+      return $this->failResponse('No user found.');
+    
+    }
+
+    $userInfo->ext_0 = $cid;
+
+    $userInfo->save();
+  
+    return $this->SuccessResponse();
+  
+  }
+
 }

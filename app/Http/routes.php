@@ -161,6 +161,8 @@ Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user']
 
     Route::get('edit', 'UsersController@edit');
 
+    Route::post('updateChannel', 'UsersController@updateChannel');
+
   }
 
 );
@@ -181,7 +183,7 @@ Route::group(['prefix' => 'login', 'namespace' => 'Login', 'middleware' => 'logi
 
   function ()
   {
-    Route::get('/', 'LoginController@index');
+    Route::post('/', 'LoginController@index');
   }
 
 );

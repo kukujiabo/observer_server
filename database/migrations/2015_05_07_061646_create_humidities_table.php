@@ -15,6 +15,7 @@ class CreateHumiditiesTable extends Migration {
 		Schema::create('humidities', function(Blueprint $table)
 		{
 			$table->increments('id');
+      $table->string('seq');
       $table->float('data');
       $table->integer('type_id');
       $table->integer('is_normal');

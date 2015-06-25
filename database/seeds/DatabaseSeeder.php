@@ -24,9 +24,9 @@ class DatabaseSeeder extends Seeder {
 
     //$this->call('UserConfigSettingTableSeeder');
 
-    //$this->call('HumidityTableSeeder');
+    $this->call('HumidityTableSeeder');
 
-    //$this->call('TemperatureTableSeeder');
+    $this->call('TemperatureTableSeeder');
 
     //$this->call('WarningSeeder');
     
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder {
 
     //$this->call('GoodExtraInfosTableSeeder');
     //
-    $this->call('BucketTableSeeder');
+    //$this->call('BucketTableSeeder');
 
 	}
 
