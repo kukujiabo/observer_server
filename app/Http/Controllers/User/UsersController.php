@@ -185,7 +185,7 @@ class UsersController extends Controller {
 
     $userInfo = UserExtInfo::where('user_id', '=', $uid)->first();
 
-    if (empty($user)) {
+    if (empty($userInfo)) {
     
       return $this->failResponse('No user found.');
     
