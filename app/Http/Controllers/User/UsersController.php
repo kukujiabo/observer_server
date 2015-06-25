@@ -181,7 +181,7 @@ class UsersController extends Controller {
   
     $uid = $request->input('uid');
 
-    $cid = $request->cid('cid');
+    $cid = $request->input('cid');
 
     $userInfo = UserExtInfo::where('user_id', '=', $uid)->first();
 
