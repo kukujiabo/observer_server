@@ -183,6 +183,12 @@ class UsersController extends Controller {
 
     $cid = $request->input('cid');
 
+    if (empty($cid)) {
+    
+      return $this->failResponse('cid is required.');
+    
+    }
+
     $userInfo = UserExtInfo::where('user_id', '=', $uid)->first();
 
     if (empty($userInfo)) {
