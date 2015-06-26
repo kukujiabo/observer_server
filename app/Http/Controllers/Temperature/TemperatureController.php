@@ -203,7 +203,7 @@ class TemperatureController extends Controller {
 
         ->max('id');
 
-    $result = Temperature::where('id', '=', $maxId)->get();
+    $result = Temperature::find($maxId);
 
     return $this->successResponse('data', $result);
   

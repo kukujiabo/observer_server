@@ -106,7 +106,7 @@ class HumidityController extends Controller {
 
         ->max('id');
 
-    $result = Humidity::where('id', '=', $maxId)->get();
+    $result = Humidity::find($maxId);
 
     return $this->successResponse('data', $result);
   
