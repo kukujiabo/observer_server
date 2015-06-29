@@ -134,6 +134,17 @@ Route::group(['prefix' => 'buckets', 'namespace' => 'Bucket', 'middleware' => 'u
 
 );
 
+Route::group(['prefix' => 'general', 'namespace' => 'General', 'middleware' => 'user'],
+
+  function ()
+  {
+    Route::get('/', 'GeneralController@index');
+  
+    Route::get('tempHumiSets', 'GeneralController@unitTempHumi');
+  }
+
+);
+
 Route::group(['prefix' => 'userinfo', 'namespace' => 'UserExtInfo', 'middleware' => 'user'],
   
   function () 
