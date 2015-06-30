@@ -125,6 +125,12 @@ class BucketController extends Controller {
     
     }
 
+    if (empty($bucket)) {
+    
+      $this->failResponse('bucket not found.');
+    
+    }
+
     $bucket->active = 0;
 
     $bucket->save();
