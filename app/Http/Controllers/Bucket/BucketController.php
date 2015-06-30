@@ -133,7 +133,7 @@ class BucketController extends Controller {
   
     $uid = $request->input('uid');
 
-    $code = $request->input('code');
+    $code = $request->input('gcode');
 
     if (empty($code)) {
     
