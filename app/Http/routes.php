@@ -130,6 +130,10 @@ Route::group(['prefix' => 'buckets', 'namespace' => 'Bucket', 'middleware' => 'u
     Route::get('/', 'BucketController@index');
   
     Route::get('myBucket', 'BucketController@getBucket');
+
+    Route::post('addBucket', 'BucketController@addBucket');
+
+    Route::post('deleteBucket', 'BucketController@deleteBucket');
   }
 
 );
@@ -177,7 +181,6 @@ Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user']
   }
 
 );
-
 
 Route::group(['prefix' => 'wine', 'namespace' => 'Wine', 'middleware' => 'user'], 
 
