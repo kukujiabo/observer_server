@@ -113,11 +113,15 @@ class BucketController extends Controller {
   
     if (empty($code)) {
     
-      $bucket = Bucket::where('good_id', '=', $gid)->first();
+      $bucket = Bucket::where('good_id', '=', $gid)
+
+            ->where('user_id', '=', $uid)
+            
+            ->first();
     
     } else {
     
-      $bucket = Bucket::where('ext_1', '=', $code)->first();
+      $bucket = Bucket::where('ext_1', '=', $gid)->first();
     
     }
 
