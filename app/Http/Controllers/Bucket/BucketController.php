@@ -127,7 +127,7 @@ class BucketController extends Controller {
 
     if (empty($bucket)) {
     
-      $this->failResponse('bucket not found.');
+      return $this->failResponse('bucket not found.');
     
     }
 
