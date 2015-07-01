@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Bucket;
 use App\Models\Goods;
+use App\Models\GoodExtraInfo;
 use Illuminate\Http\Request;
 
 class BucketController extends Controller {
@@ -174,6 +175,16 @@ class BucketController extends Controller {
     
     }
 
+    $goodInfo = GoodExtraInfo::where('good_id', '=', $gid)->first();
+
+    $icon = null;
+
+    if (!empty($goodInfo)) {
+    
+      $icon = $goodInfo->icon_url;
+    
+    }
+
     $ext_2 = $request->input('ext_2'); 
 
     $nickname = $request->input('nick');
@@ -192,9 +203,9 @@ class BucketController extends Controller {
 
     $bucket->comment = empty($comment) ? '' : $comment;
 
-    $bucket->ext_1 = $code;
+    $bucket->ext_1 = $icon ? $icon : '';
 
-    $bucket->ext_2 = empty($ext_2) ? '' : $ext_2;
+    $bucket->ext_2 = $code;
 
     $bucket->save();
 
