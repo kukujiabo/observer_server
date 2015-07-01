@@ -142,7 +142,7 @@ class BucketController extends Controller {
 
     $bucket->save();
 
-    $this->successResponse();
+    return $this->successResponse();
   
   }
 
