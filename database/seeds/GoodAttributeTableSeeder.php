@@ -8,7 +8,7 @@ class GoodAttributeTableSeeder extends Seeder {
   public function run () 
   {
 
-    DB::table('goods')->delete();
+    DB::table('good_attributes')->delete();
 
     ////////////////////甜酒
     GoodAttribute::create([

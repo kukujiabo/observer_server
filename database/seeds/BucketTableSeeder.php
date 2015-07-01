@@ -14,8 +14,6 @@ class BucketTableSeeder extends Seeder {
 
     $user = User::first();
 
-    var_dump($user->id);
-
     $goods = Goods::all();
 
     foreach ($goods as $good) {
