@@ -7,212 +7,835 @@ class GoodAttributeTableSeeder extends Seeder {
 
   public function run () 
   {
-    DB::table('good_attributes')->delete();
 
-    //容量
-    GoodAttribute::create([
-      
-      'good_code' => '5011013100118',
-
-      'attr_code' => 'capacity',
-
-      'value' => '1000',
-
-      'unit' => 'ml',
-
-      'ext_1' => '',
-
-      'active' => 1
-        
-    ]);
-  
-    //类型
-    GoodAttribute::create([
-      
-      'good_code' => '5011013100118',
-
-      'attr_code' => 'type',
-
-      'value' => '甜酒',
-
-      'unit' => '',
-
-      'ext_1' => '',
-
-      'active' => 1
-        
-    ]);
+  ////////////////////木瓜发酵酒
+  GoodAttribute::create([
     
-    //酒精含量
-    GoodAttribute::create([
+    'good_code' => '6952549300230',
+
+    'attr_code' => 'capacity',
+
+    'value' => '550',
+
+    'unit' => 'ml',
+
+    'ext_1' => '',
+
+    'active' => 1
       
-      'good_code' => '5011013100118',
+  ]);
+  
+  //类型
+  GoodAttribute::create([
+    
+    'good_code' => '6952549300230',
 
-      'attr_code' => 'alcohol_precentage',
+    'attr_code' => 'type',
 
-      'value' => '17',
+    'value' => '木瓜发酵酒',
 
-      'unit' => '%',
+    'unit' => '',
 
-      'ext_1' => '',
+    'ext_1' => '',
 
-      'active' => 1
-        
-    ]);
-
-    //原材料
-    GoodAttribute::create([
-
-      'good_code' => '5011013100118',
-
-      'attr_code' => 'ingrediant',
-
-      'value' => '奶油，白砂糖，酒精，麦芽糊精，人工乳',
-
-      'unit' => '',
-
-      'ext_1' => '',
-
-      'active' => 1
-        
-    ]);
-
-    //年份
-    GoodAttribute::create([
+    'active' => 1
       
-      'good_code' => '5011013100118',
+  ]);
+  
+  //酒精含量
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
 
-      'attr_code' => 'year',
+    'attr_code' => 'alcohol_precentage',
 
-      'value' => '2015',
+    'value' => '12',
 
-      'unit' => '年',
+    'unit' => '%',
 
-      'ext_1' => '',
+    'ext_1' => '',
 
-      'active' => 1
-        
-    ]);
-
-    //口感
-    GoodAttribute::create([
+    'active' => 1
       
-      'good_code' => '5011013100118',
+  ]);
 
-      'attr_code' => 'taste',
+  //原材料
+  GoodAttribute::create([
 
-      'value' => '香甜',
+    'good_code' => '5011013100118',
 
-      'unit' => '',
+    'attr_code' => 'ingrediant',
 
-      'ext_1' => '',
+    'value' => '鲜木瓜，纯净水，果糖，食品添加剂',
 
-      'active' => 1
-        
-    ]);
+    'unit' => '',
 
-    //产地
-    GoodAttribute::create([
+    'ext_1' => '',
+
+    'active' => 1
       
-      'good_code' => '5011013100118',
+  ]);
 
-      'attr_code' => 'origin',
+  //年份
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
 
-      'value' => '爱尔兰',
+    'attr_code' => 'year',
 
-      'unit' => '',
+    'value' => '2015',
 
-      'ext_1' => '',
-        
-      'active' => 1
+    'unit' => '年',
 
-    ]);
+    'ext_1' => '',
 
-    //品牌
-    GoodAttribute::create([
+    'active' => 1
       
-      'good_code' => '5011013100118',
+  ]);
 
-      'attr_code' => 'brand',
+  //口感
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
 
-      'value' => '百利甜酒',
+    'attr_code' => 'taste',
 
-      'unit' => '',
+    'value' => '香甜',
 
-      'ext_1' => '',
+    'unit' => '',
 
-      'active' => 1
-        
-    ]);
+    'ext_1' => '',
 
-    //最适合低温度
-    GoodAttribute::create([
+    'active' => 1
       
-      'good_code' => '5011013100118',
+  ]);
 
-      'attr_code' => 'adapt_temperature_low',
+  //产地
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
 
-      'value' => '25',
+    'attr_code' => 'origin',
 
-      'unit' => '摄氏度',
+    'value' => '中国',
 
-      'ext_1' => '',
+    'unit' => '',
 
-      'active' => 1
-        
-    ]);
-
-    //最适合高温度
-    GoodAttribute::create([
+    'ext_1' => '',
       
-      'good_code' => '5011013100118',
+    'active' => 1
 
-      'attr_code' => 'adapt_temperature_high',
+  ]);
 
-      'value' => '32',
+  //品牌
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
 
-      'unit' => '摄氏度',
+    'attr_code' => 'brand',
 
-      'ext_1' => '',
+    'value' => '金立方',
 
-      'active' => 1
-        
-    ]);
+    'unit' => '',
 
-    //最适合低湿度
+    'ext_1' => '',
 
-    GoodAttribute::create([
+    'active' => 1
       
-      'good_code' => '5011013100118',
+  ]);
 
-      'attr_code' => 'adapt_humidity_low',
+  //最适合低温度
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
 
-      'value' => '70',
+    'attr_code' => 'adapt_temperature_low',
 
-      'unit' => '%',
+    'value' => '5',
 
-      'ext_1' => '',
+    'unit' => '摄氏度',
 
-      'active' => 1
-        
-    ]);
+    'ext_1' => '',
 
-    //最适合高湿度
-    GoodAttribute::create([
+    'active' => 1
       
-      'good_code' => '5011013100118',
+  ]);
 
-      'attr_code' => 'adapt_humidity_high',
+  //最适合高温度
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
 
-      'value' => '80',
+    'attr_code' => 'adapt_temperature_high',
 
-      'unit' => '%',
+    'value' => '20',
 
-      'ext_1' => '',
+    'unit' => '摄氏度',
 
-      'active' => 1
-        
-    ]);
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合低湿度
+
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
+
+    'attr_code' => 'adapt_humidity_low',
+
+    'value' => '70',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合高湿度
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
+
+    'attr_code' => 'adapt_humidity_high',
+
+    'value' => '80',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  ////////////////////////奔富bin407
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'capacity',
+
+    'value' => '750',
+
+    'unit' => 'ml',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+  
+  //类型
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'type',
+
+    'value' => '葡萄酒',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+  
+  //酒精含量
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'alcohol_precentage',
+
+    'value' => '14.5',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //原材料
+  GoodAttribute::create([
+
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'ingrediant',
+
+    'value' => '鲜木瓜，纯净水，果糖，食品添加剂',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //年份
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'year',
+
+    'value' => '2014',
+
+    'unit' => '年',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //口感
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'taste',
+
+    'value' => '香甜',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //产地
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'origin',
+
+    'value' => '澳大利亚',
+
+    'unit' => '',
+
+    'ext_1' => '',
+      
+    'active' => 1
+
+  ]);
+
+  //品牌
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'brand',
+
+    'value' => '奔富',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合低温度
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'adapt_temperature_low',
+
+    'value' => '5',
+
+    'unit' => '摄氏度',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合高温度
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
+
+    'attr_code' => 'adapt_temperature_high',
+
+    'value' => '20',
+
+    'unit' => '摄氏度',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合低湿度
+
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'adapt_humidity_low',
+
+    'value' => '70',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合高湿度
+  GoodAttribute::create([
+    
+    'good_code' => '9310297001590',
+
+    'attr_code' => 'adapt_humidity_high',
+
+    'value' => '80',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+
+  ///////////////////法国骑士
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'capacity',
+
+    'value' => '750',
+
+    'unit' => 'ml',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+  
+  //类型
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'type',
+
+    'value' => '葡萄酒',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+  
+  //酒精含量
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'alcohol_precentage',
+
+    'value' => '13',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //原材料
+  GoodAttribute::create([
+
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'ingrediant',
+
+    'value' => '葡萄汁',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //年份
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'year',
+
+    'value' => '2014',
+
+    'unit' => '年',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //口感
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'taste',
+
+    'value' => '香甜',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //产地
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'origin',
+
+    'value' => '法国',
+
+    'unit' => '',
+
+    'ext_1' => '',
+      
+    'active' => 1
+
+  ]);
+
+  //品牌
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'brand',
+
+    'value' => '法国骑士',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合低温度
+  GoodAttribute::create([
+    
+    'good_code' => '5011013100118',
+
+    'attr_code' => 'adapt_temperature_low',
+
+    'value' => '5',
+
+    'unit' => '摄氏度',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合高温度
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'adapt_temperature_high',
+
+    'value' => '20',
+
+    'unit' => '摄氏度',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合低湿度
+
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'adapt_humidity_low',
+
+    'value' => '70',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合高湿度
+  GoodAttribute::create([
+    
+    'good_code' => '3760053116604',
+
+    'attr_code' => 'adapt_humidity_high',
+
+    'value' => '80',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  ////////////////////////罗杰美露干红
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'capacity',
+
+    'value' => '750',
+
+    'unit' => 'ml',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+  
+  //类型
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'type',
+
+    'value' => '葡萄酒',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+  
+  //酒精含量
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'alcohol_precentage',
+
+    'value' => '14.5',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //原材料
+  GoodAttribute::create([
+
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'ingrediant',
+
+    'value' => '葡萄汁',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //年份
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'year',
+
+    'value' => '2014',
+
+    'unit' => '年',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //口感
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'taste',
+
+    'value' => '香甜',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //产地
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'origin',
+
+    'value' => '法国',
+
+    'unit' => '',
+
+    'ext_1' => '',
+      
+    'active' => 1
+
+  ]);
+
+  //品牌
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'brand',
+
+    'value' => '罗杰美露',
+
+    'unit' => '',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合低温度
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'adapt_temperature_low',
+
+    'value' => '5',
+
+    'unit' => '摄氏度',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合高温度
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'adapt_temperature_high',
+
+    'value' => '20',
+
+    'unit' => '摄氏度',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合低湿度
+
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'adapt_humidity_low',
+
+    'value' => '70',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+  //最适合高湿度
+  GoodAttribute::create([
+    
+    'good_code' => '3760217672823',
+
+    'attr_code' => 'adapt_humidity_high',
+
+    'value' => '80',
+
+    'unit' => '%',
+
+    'ext_1' => '',
+
+    'active' => 1
+      
+  ]);
+
+
+  /////////////////////////////
+  
+
+
+
+
   }
 
 }
