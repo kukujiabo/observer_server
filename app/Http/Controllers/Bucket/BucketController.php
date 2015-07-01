@@ -104,7 +104,7 @@ class BucketController extends Controller {
 
   public function deleteBucket (Request $request) {
   
-    $uid = $request->input('');
+    $uid = $request->input('uid');
 
     $code = $request->input('gcode');
 
@@ -122,7 +122,11 @@ class BucketController extends Controller {
     
     } else {
     
-      $bucket = Bucket::where('ext_1', '=', $gid)->first();
+        $bucket = Bucket::where('ext_1', '=', $gid)
+            
+            ->where('user_id', '=', $uid)
+            
+            ->first();
     
     }
 
@@ -154,7 +158,6 @@ class BucketController extends Controller {
 
     $gid = $request->input('gid');
 
-
     if (empty($gid)) {
     
       return $this->failResponse('good id is required.');
@@ -174,6 +177,24 @@ class BucketController extends Controller {
       return $this->failResponse('good code not match.');
     
     }
+
+    /*
+     * 检测是否已经收藏.
+     */
+    $existBucket = Bucket::where('user_id', '=', $uid)
+
+        ->where('good_id', '=', $gid)
+
+        ->where('active', '=', '1')
+
+        ->first();
+
+    if (!empty($existBucket)) {
+    
+      return $this->failResponse('Already bucketed.');
+    
+    }
+
 
     $goodInfo = GoodExtraInfo::where('good_id', '=', $gid)->first();
 
