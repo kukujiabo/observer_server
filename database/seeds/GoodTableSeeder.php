@@ -12,7 +12,7 @@ class GoodTableSeeder extends Seeder {
 
     $array = array (
     
-      "6952549300230" => "奔富 Bin407",
+      "9310297001590" => "奔富 Bin407",
     
       "9310297001590" => "卡拉尔赤霞珠",
 
