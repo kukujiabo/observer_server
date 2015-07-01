@@ -117,6 +117,8 @@ class BucketController extends Controller {
       $bucket = Bucket::where('good_id', '=', $gid)
 
             ->where('user_id', '=', $uid)
+
+            ->where('active', '=', '1')
             
             ->first();
     
