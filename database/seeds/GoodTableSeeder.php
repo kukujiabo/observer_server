@@ -8,12 +8,18 @@ class GoodTableSeeder extends Seeder {
   public function run () 
   {
   
-    DB::table('goods')->delete();
+    //DB::table('goods')->delete();
 
     $array = array (
     
-      "5011013100118" => "Bailey's"
+      "6952549300230" => "奔富 Bin407",
     
+      "9310297001590" => "卡拉尔赤霞珠",
+
+      "3760053116604" => "法国骑士1828",
+
+      "3760217672823" => "罗杰美露干红"
+
     );
   
     foreach ($array as $key => $value) {
@@ -24,7 +30,7 @@ class GoodTableSeeder extends Seeder {
 
         'name' => $value,
 
-        'intro' => '百利甜酒',
+        'intro' => '简介：这是酒',
 
         'ext_1' => '',
 
