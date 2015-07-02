@@ -91,10 +91,34 @@ class BucketController extends Controller {
   public function getBucket (Request $request) {
   
     $uid = $request->input('uid');
+
+    $page = $request->input('page');
+
+    $page = empty($page) ? 1 : $page;
+
+    $page -= 1;
+
+    $perpage = 30;
+
+    $count = Bucket::where('user_id', '=', $uid)
+
+        ->where('active', '=', '1')
+
+        ->count();
+
+    if ($page * $perpage > $count) {
+    
+      return $this->failResponse('no data.');
+    
+    }
   
     $myBucket = Bucket::where('user_id', '=', $uid)
         
         ->where('active', '=', '1')
+
+        ->skip($perpage * $page)
+
+        ->take($perpage)
           
         ->get();
   
