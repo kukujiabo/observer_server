@@ -16,6 +16,8 @@ class BucketTableSeeder extends Seeder {
 
     $goods = Goods::all();
 
+    $url = '';
+
     foreach ($goods as $good) {
     
       $goodInfo = GoodExtraInfo::where('good_id', '=', $good->id)->first();
@@ -33,6 +35,28 @@ class BucketTableSeeder extends Seeder {
         'comment' => '测试，测试',
 
         'ext_1'  => $goodInfo->icon_url
+          
+      ]);
+
+      $url = $goodInfo->icon_url;
+    
+    }
+
+    for ($i = 1000; $i < 2000; $i++) {
+    
+      Bucket::create([
+          
+        'user_id' => 1,
+
+        'good_id' => $i,
+
+        'active' => 1,
+
+        'nick_name' => '测试',
+
+        'comment' => '测试，测试',
+
+        'ext_1'  => $url
           
       ]);
     
