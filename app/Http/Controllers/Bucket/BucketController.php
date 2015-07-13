@@ -96,9 +96,11 @@ class BucketController extends Controller {
 
     $page = empty($page) ? 1 : $page;
 
+    $range = $request->input('range');
+
     $page -= 1;
 
-    $perpage = 30;
+    $perpage = $range > 0 ? $range : 10;
 
     $count = Bucket::where('user_id', '=', $uid)
 
