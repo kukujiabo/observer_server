@@ -19,7 +19,10 @@ class CreateMechinesTable extends Migration {
       $table->integer('type');
       $table->integer('uid');
       $table->integer('active');
+      $table->string('mechine_code');
 			$table->timestamps();
+      $table->unique('mechine_code');
+      $table->primary('id');
 		});
 	}
 
