@@ -11,7 +11,7 @@ class HumidityTableSeeder extends Seeder {
 
     $user = DB::table('users')->first();
 
-    $mechine = DB::table('mechines')->where('type', '=', '1')->first();
+    $mechine = DB::table('mechines')->first();
 
     for ($i = 0; $i < 1000; $i++) {
     
