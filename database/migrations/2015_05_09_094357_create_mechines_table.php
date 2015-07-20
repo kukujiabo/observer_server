@@ -22,7 +22,6 @@ class CreateMechinesTable extends Migration {
       $table->string('mechine_code');
 			$table->timestamps();
       $table->unique('mechine_code');
-      $table->primary('id');
 		});
 	}
 
