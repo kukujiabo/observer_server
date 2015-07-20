@@ -11,22 +11,23 @@ class MechineTableSeeder extends Seeder {
     DB::table('mechines')->delete();  
 
     $user = DB::table('users')->first();
+
+    $i = 100;
     
-    for ($i = 0; $i < 2; $i++) {
+    Mechine::create([
     
-      Mechine::create([
-    
-          'address' => "$i, $i, $i, $i",
-            
-          'type' => $i/2,
-    
-          'uid' => $user->id,
-    
-          'active' => 1,
+        'address' => "$i, $i, $i, $i",
           
-      ]);
+        'type' => $i/2,
+    
+        'uid' => $user->id,
+
+        'mechine_code' => '67232458555780670671FF53',
+    
+        'active' => 1,
+        
+    ]);
   
-    }
 
   }
 
