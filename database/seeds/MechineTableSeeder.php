@@ -11,6 +11,8 @@ class MechineTableSeeder extends Seeder {
     DB::table('mechines')->delete();  
 
     $user = DB::table('users')->first();
+
+    $i = 100;
     
     Mechine::create([
     
