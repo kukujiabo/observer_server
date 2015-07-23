@@ -18,7 +18,7 @@ class CreateServerConfigsTable extends Migration {
       $table->string('field');
       $table->string('value');
       $table->string('comment');
-      $table->string('ext_1');
+      $table->string('ext_1')->nullable();
 			$table->timestamps();
 		});
 	}

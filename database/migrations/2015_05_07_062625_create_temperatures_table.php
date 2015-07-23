@@ -21,7 +21,6 @@ class CreateTemperaturesTable extends Migration {
       $table->integer('is_normal');
       $table->integer('user_id');
       $table->integer('mechine_id');
-      $table->datetime('create_at');
 			$table->timestamps();
 		});
 	}

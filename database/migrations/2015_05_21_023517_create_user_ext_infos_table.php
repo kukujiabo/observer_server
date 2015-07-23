@@ -17,9 +17,9 @@ class CreateUserExtInfosTable extends Migration {
 			$table->increments('id');
       $table->string('phone');
       $table->string('pic_url');
-      $table->string('ext_0');
-      $table->text('ext_1');
-      $table->text('ext_2');
+      $table->string('ext_0')->nullable();
+      $table->text('ext_1')->nullable();
+      $table->text('ext_2')->nullable();
       $table->integer('user_id');
 			$table->timestamps();
 		});

@@ -16,12 +16,12 @@ class CreateGoodExtraInfosTable extends Migration {
 		{
 			$table->increments('id');
       $table->integer('good_id');
-      $table->string('icon_url');
-      $table->string('pic_url_1');
-      $table->string('pic_url_2');
-      $table->string('pic_url_3');
-      $table->text('introduction');
-      $table->string('notice');
+      $table->string('icon_url')->nullable();
+      $table->string('pic_url_1')->nullable();
+      $table->string('pic_url_2')->nullable();
+      $table->string('pic_url_3')->nullable();
+      $table->text('introduction')->nullable();
+      $table->string('notice')->nullable();
       $table->integer('active');
       $table->string('ext');
 			$table->timestamps();
