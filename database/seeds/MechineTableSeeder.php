@@ -10,7 +10,7 @@ class MechineTableSeeder extends Seeder {
 
     DB::table('mechines')->delete();  
 
-    $user = DB::table('users')->first();
+    $customer = DB::table('customers')->first();
 
     $i = 100;
     
@@ -20,7 +20,7 @@ class MechineTableSeeder extends Seeder {
           
         'type' => $i/2,
     
-        'uid' => $user->id,
+        'uid' => $customer->id,
 
         'mechine_code' => '67232458555780670671FF53',
     

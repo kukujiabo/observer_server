@@ -9,7 +9,7 @@ class UserConfigSettingTableSeeder extends Seeder {
   {
     DB::table('user_config_settings')->delete();
 
-    $user = DB::table('users')->first();
+    $customer = DB::table('customers')->first();
     /*
      * 测试用户测量温度间隔配置
      */
@@ -17,7 +17,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     UserConfigSetting::create([
     
-        'user_id' => $user->id,
+        'user_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -37,7 +37,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     UserConfigSetting::create([
     
-        'user_id' => $user->id,
+        'user_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -57,7 +57,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     UserConfigSetting::create([
     
-        'user_id' => $user->id,
+        'user_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -77,7 +77,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     UserConfigSetting::create([
     
-        'user_id' => $user->id,
+        'user_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -97,7 +97,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     UserConfigSetting::create([
     
-        'user_id' => $user->id,
+        'user_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -117,7 +117,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     UserConfigSetting::create([
     
-        'user_id' => $user->id,
+        'user_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -137,7 +137,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     UserConfigSetting::create([
     
-        'user_id' => $user->id,
+        'user_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -157,7 +157,7 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     UserConfigSetting::create([
     
-        'user_id' => $user->id,
+        'user_id' => $customer->id,
 
         'setting_id' => $setting->id,
 

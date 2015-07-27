@@ -165,18 +165,18 @@ Route::group(['prefix' => 'userinfo', 'namespace' => 'UserExtInfo', 'middleware'
  *
  *
  */
-Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => 'user'],
+Route::group(['prefix' => 'user', 'namespace' => 'Customer', 'middleware' => 'user'],
 
   function ()
   {
 
-    Route::get('/', 'UsersController@index');
+    Route::get('/', 'CustomersController@index');
 
-    Route::post('profileImageUpload', 'UsersController@imgUpload');
+    Route::post('profileImageUpload', 'CustomersController@imgUpload');
 
-    Route::get('edit', 'UsersController@edit');
+    Route::get('edit', 'CustomersController@edit');
 
-    Route::post('updateChannel', 'UsersController@updateChannel');
+    Route::post('updateChannel', 'CustomerController@updateChannel');
 
   }
 

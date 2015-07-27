@@ -9,7 +9,7 @@ class TemperatureTableSeeder extends Seeder {
   {
     DB::table('temperatures')->delete();  
 
-    $user = DB::table('users')->first();
+    $customers = DB::table('customers')->first();
 
     $mechine = DB::table('mechines')->first();
 
@@ -17,19 +17,20 @@ class TemperatureTableSeeder extends Seeder {
     
       Temperature::create([
 
-          'data' => 15 + $i%13,
+        'data' => 15 + $i%13,
 
-          'seq' => md5($i),
-            
-          'type_id' => 2,
-
-          'is_normal' => 1,
-
-          'user_id' => $user->id,
-
-          'mechine_id' => $mechine->id,
+        'seq' => md5($i),
           
-          'created_at' => time() + 60 * $i
+        'type_id' => 2,
+
+        'is_normal' => 1,
+
+        'user_id' => $customers->id,
+
+        'mechine_id' => $mechine->id,
+        
+        'created_at' => time() + 60 * $i
+
       ]);
     
     }
