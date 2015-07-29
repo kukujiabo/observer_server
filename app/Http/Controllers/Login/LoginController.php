@@ -2,8 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Models\UserExtInfo;
+use App\Modes\Customer;
+use App\Models\CustomerExtraInfo;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller {
@@ -19,37 +19,37 @@ class LoginController extends Controller {
 
     $password = $request->input('password');
 
-    $user = User::where('name', '=', $name)->get()->toArray();
+    $customer= Customer::where('name', '=', $name)->get()->toArray();
 
-    if (empty($user)) {
+    if (empty($customer)) {
     
       return $this->authFail(1);
     
     }
 
-    $uInfo = $user[0];
+    $customerInfo = $customer[0];
 
-    if ($uInfo['password'] != md5($password)) {
+    if ($customerInfo['password'] != md5($password)) {
 
       return $this->authFail(2);
     
     }
 
-    unset($uInfo['password']);
+    unset($customerInfo['password']);
 
-    $ext= UserExtInfo::where('user_id', '=', $uInfo['id'])->first();
+    $ext = CustomerExtraInfo::where('customer_id', '=', $customerInfo['id'])->first();
 
     if (!empty($ext)) {
 
-      $uInfo['pic_url'] = $ext->pic_url;
+      $customerInfo['pic_url'] = $ext->pic_url;
     
-      $uInfo['phone'] = $ext->phone;
+      $customerInfo['phone'] = $ext->phone;
 
-      $uInfo['channel_id'] = $ext->ext_0;
+      $customerInfo['channel_id'] = $ext->ext_0;
     
     }
 		
-    return $this->successResponse('info', $uInfo);
+    return $this->successResponse('info', $customerInfo);
 
 	}
 

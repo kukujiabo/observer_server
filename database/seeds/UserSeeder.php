@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder; 
-use App\Models\Humidity;
 use App\User;
 
 class UserSeeder extends Seeder {

@@ -62,13 +62,6 @@ class UserConfigSettingsController extends Controller {
 	}
 
 	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-
-	/**
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id
@@ -78,6 +71,7 @@ class UserConfigSettingsController extends Controller {
 	{
 		//
 	}
+
 
   /**
    * update user config setting.
