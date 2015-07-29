@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder; 
 use App\Models\Bucket;
 use App\User;
+use App\Models\Customer;
 use App\Models\Goods;
 use App\Models\GoodExtraInfo;
 
@@ -12,7 +13,7 @@ class BucketTableSeeder extends Seeder {
   {
     DB::table('buckets')->delete();
 
-    $user = User::first();
+    $user = Customer::first();
 
     $goods = Goods::all();
 
