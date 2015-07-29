@@ -9,7 +9,7 @@ class WarningSeeder extends Seeder {
   {
      DB::table('warnings')->delete();
 
-     $user = DB::table('users')->first();
+     $user = DB::table('customers')->first();
 
      $mechines = DB::table('mechines')->where('uid', '=', $user->id)
               
