@@ -18,10 +18,10 @@ class CreateBucketsTable extends Migration {
       $table->integer('user_id');
       $table->integer('good_id');
       $table->integer('active');
-      $table->string('nick_name');
-      $table->string('comment');
-      $table->string('ext_1');
-      $table->string('ext_2');
+      $table->string('nick_name')->nullable();
+      $table->string('comment')->nullable();
+      $table->string('ext_1')->nullable();
+      $table->string('ext_2')->nullable();
 			$table->timestamps();
 		});
 	}

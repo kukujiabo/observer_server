@@ -71,7 +71,7 @@ class UserSettingTableSeeder extends Seeder {
 
           'level' => 1,
 
-          'superior' => '',
+          'superior' => 0,
 
           'active' => 1,
 
@@ -85,7 +85,7 @@ class UserSettingTableSeeder extends Seeder {
 
           'level' => 1,
 
-          'superior' => '',
+          'superior' => 0,
 
           'active' => 1,
 
@@ -99,7 +99,7 @@ class UserSettingTableSeeder extends Seeder {
 
           'level' => 1,
 
-          'superior' => '',
+          'superior' => 0,
 
           'active' => 1,
 
@@ -113,7 +113,7 @@ class UserSettingTableSeeder extends Seeder {
 
           'level' => 1,
 
-          'superior' => '',
+          'superior' => 0,
 
           'active' => 1,
 

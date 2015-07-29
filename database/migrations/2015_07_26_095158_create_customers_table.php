@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSetsDatasTable extends Migration {
+class CreateCustomersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,13 @@ class CreateSetsDatasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('sets_datas', function(Blueprint $table)
+		Schema::create('customers', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('name');
+			$table->string('email')->unique();
+			$table->string('password', 60);
+			$table->rememberToken();
 			$table->timestamps();
 		});
 	}
@@ -26,7 +30,7 @@ class CreateSetsDatasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('sets_datas');
+		Schema::drop('customers');
 	}
 
 }

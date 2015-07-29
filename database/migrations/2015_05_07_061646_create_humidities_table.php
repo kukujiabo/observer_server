@@ -17,11 +17,10 @@ class CreateHumiditiesTable extends Migration {
 			$table->increments('id');
       $table->string('seq');
       $table->float('data');
-      $table->integer('type_id');
-      $table->integer('is_normal');
+      $table->integer('type_id')->nullable();
+      $table->integer('is_normal')->nullable();
       $table->integer('user_id');
       $table->integer('mechine_id');
-      $table->datetime('create_at');
 			$table->timestamps();
 		});
 	}

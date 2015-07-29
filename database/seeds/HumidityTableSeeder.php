@@ -9,7 +9,7 @@ class HumidityTableSeeder extends Seeder {
   {
     DB::table('humidities')->delete();  
 
-    $user = DB::table('users')->first();
+    $customer = DB::table('customers')->first();
 
     $mechine = DB::table('mechines')->first();
 
@@ -25,7 +25,7 @@ class HumidityTableSeeder extends Seeder {
 
           'is_normal' => 1,
 
-          'user_id' => $user->id,
+          'user_id' => $customer->id,
 
           'mechine_id' => $mechine->id,
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserExtInfosTable extends Migration {
+class CreateCustomerExtraInfosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateUserExtInfosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('user_ext_infos', function(Blueprint $table)
+		Schema::create('customer_extra_infos', function(Blueprint $table)
 		{
 			$table->increments('id');
       $table->string('phone');
@@ -20,7 +20,7 @@ class CreateUserExtInfosTable extends Migration {
       $table->string('ext_0')->nullable();
       $table->text('ext_1')->nullable();
       $table->text('ext_2')->nullable();
-      $table->integer('user_id');
+      $table->integer('customer_id');
 			$table->timestamps();
 		});
 	}
@@ -32,7 +32,7 @@ class CreateUserExtInfosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('user_ext_infos');
+		Schema::drop('customer_extra_infos');
 	}
 
 }
