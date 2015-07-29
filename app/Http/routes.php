@@ -21,7 +21,6 @@ Route::group(['prefix' => 'temperature', 'namespace' => 'Temperature', 'middlewa
 
   function ()
   {
-
     Route::get('/', 'TemperatureController@index'); 
 
     Route::get('tpage', 'TemperatureController@temperatureByPage');
