@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
-use App\Models\CustomerInfo;
+use App\Models\CustomerExtrInfo;
 use Illuminate\Http\Request;
 
 class CustomersController extends Controller {
