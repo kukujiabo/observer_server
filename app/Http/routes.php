@@ -175,7 +175,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'Customer', 'middleware' => 'us
 
     Route::get('edit', 'CustomersController@edit');
 
-    Route::post('updateChannel', 'CustomerController@updateChannel');
+    Route::post('updateChannel', 'CustomersController@updateChannel');
 
   }
 
