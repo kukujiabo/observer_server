@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Modes\Customer;
+use App\Models\Customer;
 use App\Models\CustomerExtraInfo;
 use Illuminate\Http\Request;
 
