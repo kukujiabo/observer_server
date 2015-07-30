@@ -17,7 +17,7 @@ class WarningSeeder extends Seeder {
 
          ->get();
 
-     $settings = DB::table('v_user_setting_relat')->where('user_id', '=', $user->id)
+     $settings = DB::table('v_user_setting_relat')->where('customer_id', '=', $user->id)
 
          ->get();
 
