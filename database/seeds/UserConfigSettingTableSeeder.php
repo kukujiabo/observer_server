@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder; 
-use App\Models\UserConfigSetting;
+use App\Models\CustomerConfigSetting;
 
 class UserConfigSettingTableSeeder extends Seeder {
 
@@ -15,9 +15,9 @@ class UserConfigSettingTableSeeder extends Seeder {
      */
     $setting = DB::table('user_settings')->where('setting_name', '=' , 't_interval')->first();
 
-    UserConfigSetting::create([
+    CustomerConfigSetting::create([
     
-        'user_id' => $customer->id,
+        'customer_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -35,9 +35,9 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     $setting = DB::table('user_settings')->where('setting_name', '=' , 'h_interval')->first();
 
-    UserConfigSetting::create([
+    CustomerConfigSetting::create([
     
-        'user_id' => $customer->id,
+        'customer_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -55,9 +55,9 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     $setting = DB::table('user_settings')->where('setting_name', '=' , 't_warning')->first();
 
-    UserConfigSetting::create([
+    CustomerConfigSetting::create([
     
-        'user_id' => $customer->id,
+        'customer_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -75,9 +75,9 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     $setting = DB::table('user_settings')->where('setting_name', '=' , 'h_warning')->first();
 
-    UserConfigSetting::create([
+    CustomerConfigSetting::create([
     
-        'user_id' => $customer->id,
+        'customer_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -95,9 +95,9 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     $setting = DB::table('user_settings')->where('setting_name', '=' , 't_warning_high')->first();
 
-    UserConfigSetting::create([
+    CustomerConfigSetting::create([
     
-        'user_id' => $customer->id,
+        'customer_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -115,9 +115,9 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     $setting = DB::table('user_settings')->where('setting_name', '=' , 't_warning_low')->first();
 
-    UserConfigSetting::create([
+    CustomerConfigSetting::create([
     
-        'user_id' => $customer->id,
+        'customer_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -135,9 +135,9 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     $setting = DB::table('user_settings')->where('setting_name', '=' , 'h_warning_high')->first();
 
-    UserConfigSetting::create([
+    CustomerConfigSetting::create([
     
-        'user_id' => $customer->id,
+        'customer_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
@@ -155,9 +155,9 @@ class UserConfigSettingTableSeeder extends Seeder {
 
     $setting = DB::table('user_settings')->where('setting_name', '=' , 'h_warning_low')->first();
 
-    UserConfigSetting::create([
+    CustomerConfigSetting::create([
     
-        'user_id' => $customer->id,
+        'customer_id' => $customer->id,
 
         'setting_id' => $setting->id,
 
